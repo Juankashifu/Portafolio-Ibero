@@ -41,8 +41,3 @@
 - **Correo:** _juancvp06@hotmail.com_  
 - **Teléfono:** _9935173422_  
 - **instagram:** _juankasz_vp_
-
-![Diagrama del sistema](recursos/imgs/actividad4_experimento.jpg)
-
-<!-- Control de tamaño usando HTML -->
-<img src="recursos/imgs/actividad4_experimento.jpg" alt="Diagrama del sistema" width="420">
