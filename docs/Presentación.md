@@ -9,6 +9,12 @@
 - _Estudio 1er Semestre de ingeniería mecatrónica_
 - _Me enfoco en la implementación de tarjetas o placas de desarrollo en prototipos y el armado de los circuitos de estos_
 
+![Diagrama del sistema](recursos/imgs/imagen_github.jpg)
+
+<!-- Control de tamaño usando HTML -->
+<img src="recursos/imgs/imagen_github.jpg" alt="Diagrama del sistema" width="420">
+
+
 ## 2) Logros/Historial
 - _He creado un contador digital de personas mediante un esp32 y una matriz led para tener un registro eficiente de personas comiendo en un stand de tacos, de esta forma se pudieron obtener datos precisos para realizar una tesina y saber el flujo de clientes cada 15 minutos para encontrar a que hora del día hay más clientes_
 - _He desarrollado un carro omnidireccional controlado por brazo o mano mediante un giroscopio, este proyecto utilizo: 2 esp32, llantas omnidireccionales, 4 motoresdc, 2 puente h y un mpu6050_
