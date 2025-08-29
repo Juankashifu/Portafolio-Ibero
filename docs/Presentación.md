@@ -30,7 +30,7 @@
 - **Teléfono:** _9935173422_  
 - **instagram:** _juankasz_vp_
 
-![Diagrama del sistema](recursos/imgs/ACTIVIDAD 4 EXPERIMENTO, ESPACIO MUESTRAL Y EVENTO.jpg)
+![Diagrama del sistema](recursos/imgs/actividad4_experimento.jpg)
 
-<!-- Control de tamaño usando HTML (cuando se requiera) -->
-<img src="../recursos/imgs/ACTIVIDAD 4 EXPERIMENTO, ESPACIO MUESTRAL Y EVENTO.jpg" alt="Diagrama del sistema" width="420">
+<!-- Control de tamaño usando HTML -->
+<img src="recursos/imgs/actividad4_experimento.jpg" alt="Diagrama del sistema" width="420">
