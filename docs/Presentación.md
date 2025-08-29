@@ -12,7 +12,7 @@
 ![Diagrama del sistema](recursos/imgs/Imagen-github.jpeg)
 
 <!-- Control de tamaño usando HTML -->
-<img src="recursos/imgs/Imagen-github.jpeg" alt="Diagrama del sistema" width="420">
+<img src="recursos/imgs/Imagen-github.jpeg" alt="Diagrama del sistema" width="320">
 
 
 ## 2) Logros/Historial
