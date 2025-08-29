@@ -46,6 +46,7 @@
 
 ## 7) Contacto
 
-- **Correo:** _juancvp06@hotmail.com_  
+- **Correo:** _juancvp06@hotmail.com_
+- **Correo institucional:** _204819@iberopuebla.mx_
 - **Teléfono:** _9935173422_  
 - **instagram:** _juankasz_vp_
