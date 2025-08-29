@@ -35,7 +35,9 @@
 - Inglés B1
   
 ## 6) Extracurricular
-- Taekwondo 
+- Taekwondo
+- Música
+- Guitarra
 - Cursos
     * academic action
     * p4hbionics
