@@ -9,10 +9,10 @@
 - _Estudio 1er Semestre de ingeniería mecatrónica_
 - _Me enfoco en la implementación de tarjetas o placas de desarrollo en prototipos y el armado de los circuitos de estos_
 
-![Diagrama del sistema](docs/recursos/imgs/imagen-github.jpeg)
+![Diagrama del sistema](recursos/imgs/imagen-github.jpeg)
 
 <!-- Control de tamaño usando HTML -->
-<img src="docs/recursos/imgs/imagen-github.jpeg" alt="Diagrama del sistema" width="420">
+<img src="recursos/imgs/imagen-github.jpeg" alt="Diagrama del sistema" width="420">
 
 
 ## 2) Logros/Historial
