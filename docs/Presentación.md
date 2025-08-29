@@ -28,10 +28,13 @@
 - Español (nativo)
 - Inglés B1
   
-## 6) Extras
-- Taekwondo
+## 6) Extracurricular
+- Taekwondo 
 - Cursos
-- Investigaciones
+    * academic action
+    * p4hbionics
+    * ICEMEXICO
+- Investigaciones de robótica
 
 ## 7) Contacto
 
