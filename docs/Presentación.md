@@ -28,4 +28,9 @@
 
 - **Correo:** _juancvp06@hotmail.com_  
 - **Teléfono:** _9935173422_  
-- **instagram:** _juankasz_vp_  
+- **instagram:** _juankasz_vp_
+
+![Diagrama del sistema](recursos/imgs/ACTIVIDAD 4 EXPERIMENTO, ESPACIO MUESTRAL Y EVENTO.jpg)
+
+<!-- Control de tamaño usando HTML (cuando se requiera) -->
+<img src="../recursos/imgs/ACTIVIDAD 4 EXPERIMENTO, ESPACIO MUESTRAL Y EVENTO.jpg" alt="Diagrama del sistema" width="420">
