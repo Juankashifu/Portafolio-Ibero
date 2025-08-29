@@ -1,4 +1,4 @@
-## 1) Resumen
+## 1) Acerca de mí
 
 - **Nombre del proyecto:** _Página Github_  
 - **Autor:** _Juan Carlos Valdés Pérez_  
@@ -24,7 +24,16 @@
     * Esp32
     * Rasberry pi pico
  
-## 5) Contacto
+## 5) Idiomas
+- Español (nativo)
+- Inglés B1
+  
+## 6) Extras
+- Taekwondo
+- Cursos
+- Investigaciones
+
+## 7) Contacto
 
 - **Correo:** _juancvp06@hotmail.com_  
 - **Teléfono:** _9935173422_  
