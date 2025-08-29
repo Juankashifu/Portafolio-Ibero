@@ -14,6 +14,10 @@
 - _He desarrollado un carro omnidireccional controlado por brazo o mano mediante un giroscopio, este proyecto utilizo: 2 esp32, llantas omnidireccionales, 4 motoresdc, 2 puente h y un mpu6050_
 - _Gane una competencia de minisumos autónomos construidos y programados desde 0 en el Colegio Americano de Tabasco_
 
+## 3) Habilidades
+- _Programación:_
+      * C++
+
 ## 3) Contacto
 
 - **Correo:** _juancvp06@hotmail.com_  
