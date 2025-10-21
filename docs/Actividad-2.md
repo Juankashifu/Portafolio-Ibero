@@ -83,3 +83,7 @@ void loop() {
 }
 
 ```
+---
+## 5) Galería y Demostración
+
+![BT-Terminal en el teléfono](recursos/imgs/BT-Terminal.jpeg)
