@@ -1,27 +1,16 @@
-# 📚 Proyecto 1: "Hola Mundo" del Hardware (LED Blink)
+# 📚 Proyecto 1: ESP32 - Control de Salida Digital (LED Blink)
 
-> Este es el proyecto fundamental de la mecatrónica. Demuestra que tienes control sobre el microcontrolador y puedes enviar una señal al mundo físico.
 
 ---
 
 ## 1) Resumen
 
 -   **Nombre del proyecto:** `ESP32 - Control de Salida Digital (Blink)`
--   **Autor:** _(Tu Nombre)_
--   **Asignatura:** _(Tu Asignatura)_
--   **Fecha:** _(Fecha de Hoy)_
+-   **Autor:** Juan Carlos Valdés Pérez
+-   **Asignatura:** Introducción a la Mecatrónica
+-   **Fecha:** 12/09/2025
 -   **Descripción breve:** Un programa básico que hace parpadear un LED conectado a un pin digital del ESP32.
 
-> **🤖 Consejo de RepoMentor:**
-> ¡Este proyecto es tu "Hola, Mundo!" del hardware! Nunca lo subestimes. Demuestra que sabes configurar tu entorno, compilar código y energizar un actuador básico.
-
----
-
-## 📸 Demostración del Proyecto
-
-(¡Aquí pones una foto, o mejor, un GIF animado de tu circuito parpadeando!)
-
-![Demo del LED Parpadeando](Blink-Demo.gif)
 
 ---
 
@@ -43,19 +32,19 @@
 
 ## 4) Requisitos
 
-**Software**
-1.  Arduino IDE (con el gestor de tarjetas ESP32 instalado).
-2.  Controladores USB (CH340 o CP210x, dependiendo de tu placa).
+### Software
+* Arduino IDE (con el gestor de tarjetas ESP32 instalado).
+* Controladores USB (CH340 o CP210x, dependiendo de la placa).
 
-**Hardware (Lista de Materiales)**
-1.  Placa de desarrollo ESP32 (x1)
-2.  LED de 5mm (x1)
-3.  Resistencia de 220 $\Omega$ o 330 $\Omega$ (x1)
-4.  Protoboard (x1)
-5.  Cables Jumper (x2)
+### Hardware (Lista de Materiales)
+* Placa de desarrollo ESP32 (x1)
+* LED de 5mm (x1)
+* Resistencia de 220 ohms o 330 ohms(x1)
+* Protoboard (x1)
+* Cables Jumper (x2)
 
-**Conocimientos previos**
--   Ninguno. Este es el punto de partida.
+### Conocimientos previos
+* Ninguno. Este es el punto de partida.
 
 ---
 
@@ -69,10 +58,8 @@ El `pin 2` es comúnmente el LED azul que ya viene integrado en la placa (`LED_B
 /*
  * PROYECTO 1: LED BLINK
  * Descripción: Hace parpadear un LED conectado al GPIO 2.
- * Autor: (Tu Nombre)
- * Fecha: (Fecha de Hoy)
- */
 
+```bash
 // Definimos una constante para el pin del LED.
 const int LED_PIN = 2; 
 
@@ -94,3 +81,5 @@ void loop() {
   // 5. Esperar otro segundo
   delay(1000);
 }
+```
+
