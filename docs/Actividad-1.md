@@ -1,85 +1,56 @@
-# 📚 Proyecto 1: ESP32 - Control de Salida Digital (LED Blink)
+# 📚 Práctica 1: Control de LED con Pulsador (Entrada Digital)
 
+> Un proyecto fundamental para entender cómo un microcontrolador (ESP32) lee información del mundo físico (un botón) y actúa sobre él (un LED).
 
 ---
 
 ## 1) Resumen
 
--   **Nombre del proyecto:** `ESP32 - Control de Salida Digital (Blink)`
--   **Autor:** Juan Carlos Valdés Pérez
--   **Asignatura:** Introducción a la Mecatrónica
--   **Fecha:** 12/09/2025
--   **Descripción breve:** Un programa básico que hace parpadear un LED conectado a un pin digital del ESP32.
+- **Autor:** Juan Carlos Valdés Pérez
+- **Asignatura:** Introducción a la Mecatrónica
+- **Fecha:** 12/09/2025
+- **Placa:** ESP32
+- **Descripción breve:** Un circuito simple que utiliza un pulsador (push button) para controlar el encendido y apagado de un LED, demostrando el uso de pines de entrada y salida digital.
 
-
----
-
-## 2) Objetivos
-
--   **General:** Comprender el funcionamiento de los pines de Salida Digital (GPIO) del ESP32.
--   **Específicos:**
-    -   Configurar correctamente el IDE de Arduino para la placa ESP32.
-    -   Declarar y configurar un pin digital como `OUTPUT`.
-    -   Enviar señales eléctricas (HIGH y LOW) para encender y apagar un LED.
-    -   Utilizar la función `delay()` para controlar el tiempo del parpadeo.
-
-## 3) Alcance y Exclusiones
-
--   **Incluye:** El parpadeo de un solo LED a una frecuencia constante.
--   **No incluye:** Control de brillo (PWM), lectura de botones, o cualquier tipo de comunicación.
+> **Nota:** Este proyecto es la base para cualquier sistema de control que requiera leer un interruptor, un sensor de límite o cualquier señal digital simple.
 
 ---
 
-## 4) Requisitos
+## 2) Objetivo del Proyecto
 
-### Software
-* Arduino IDE (con el gestor de tarjetas ESP32 instalado).
-* Controladores USB (CH340 o CP210x, dependiendo de la placa).
+Aprender a configurar los pines de un ESP32 para dos modos diferentes:
 
-### Hardware (Lista de Materiales)
-* Placa de desarrollo ESP32 (x1)
-* LED de 5mm (x1)
-* Resistencia de 220 ohms o 330 ohms(x1)
-* Protoboard (x1)
-* Cables Jumper (x2)
-
-### Conocimientos previos
-* Ninguno. Este es el punto de partida.
+- **Modo SALIDA (OUTPUT):** Para enviar voltaje y encender un LED usando la función `digitalWrite()`.
+- **Modo ENTRADA (INPUT):** Para leer el estado de un componente externo, en este caso un pulsador, usando la función `digitalRead()`.
 
 ---
 
-## 5) Código e Instalación
+## 3) Componentes y Requisitos
 
-### El Código
+**Hardware**
+- Microcontrolador ESP32
+- 1 LED (cualquier color)
+- 1 Resistencia de 220 Ohms (para proteger el LED)
+- 1 Pulsador (push button)
+- Protoboard y Jumpers (cables)
 
-El `pin 2` es comúnmente el LED azul que ya viene integrado en la placa (`LED_BUILTIN`).
+**Software**
+- Arduino IDE
+- Lenguaje de programación: C++
 
-```arduino
-/*
- * PROYECTO 1: LED BLINK
- * Descripción: Hace parpadear un LED conectado al GPIO 2.
+---
 
-```bash
-// Definimos una constante para el pin del LED.
-const int LED_PIN = 2; 
+## 4) Desafíos Clave y Aprendizajes
 
-void setup() {
-  // 1. Configurar el pin del LED como una SALIDA (OUTPUT)
-  pinMode(LED_PIN, OUTPUT);
-}
+**Desafío:**
+El desafío más común al inicio fue entender la polaridad del LED. Al conectarlo al revés (ánodo y cátodo invertidos), el circuito no funcionaba aunque el código estuviera perfecto.
 
-void loop() {
-  // 2. Encender el LED (enviar señal ALTA)
-  digitalWrite(LED_PIN, HIGH);
-  
-  // 3. Esperar 1 segundo (1000 milisegundos)
-  delay(1000); 
-  
-  // 4. Apagar el LED (enviar señal BAJA)
-  digitalWrite(LED_PIN, LOW);
-  
-  // 5. Esperar otro segundo
-  delay(1000);
-}
-```
+**Aprendizaje:**
+El aprendizaje clave fue la **importancia de verificar el hardware** antes de asumir que el error está en el software (código). También aprendí a diferenciar claramente entre `pinMode(INPUT)` y `pinMode(OUTPUT)`, que son la base para controlar casi cualquier componente.
 
+---
+
+## 5) Galería y Demostració
+
+![Foto del circuito en protoboard con el pulsador](IMG_4844.jpg)
+![Otra vista del prototipo](IMG_4840.jpg)
