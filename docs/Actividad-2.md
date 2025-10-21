@@ -51,7 +51,7 @@ Mi principal aprendizaje fue descubrir el potencial de una terminal serial. Ante
 
 Aquí está el fragmento de código del ESP32 que "escucha" los datos que llegan por Bluetooth.
 
-```cpp
+```bash
 #include "BluetoothSerial.h"
 
 BluetoothSerial SerialBT;
@@ -81,3 +81,5 @@ void loop() {
   }
   delay(1000); // Pequeña pausa
 }
+
+```
