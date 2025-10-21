@@ -1,12 +1,27 @@
-# 📚 Actividad1: ESP32 - Control de Salida Digital (LED Blink)
+# 📚 Proyecto 1: "Hola Mundo" del Hardware (LED Blink)
+
+> Este es el proyecto fundamental de la mecatrónica. Demuestra que tienes control sobre el microcontrolador y puedes enviar una señal al mundo físico.
+
+---
 
 ## 1) Resumen
 
 -   **Nombre del proyecto:** `ESP32 - Control de Salida Digital (Blink)`
 -   **Autor:** _(Tu Nombre)_
--   **Asignatura:** _(Tu Asignatura, ej: Taller de Introducción a la Mecatrónica)_
+-   **Asignatura:** _(Tu Asignatura)_
 -   **Fecha:** _(Fecha de Hoy)_
--   **Descripción breve:** Un programa básico que hace parpadear un LED conectado a un pin digital del ESP32. Es la prueba inicial para verificar que el entorno de desarrollo y el hardware funcionan correctamente.
+-   **Descripción breve:** Un programa básico que hace parpadear un LED conectado a un pin digital del ESP32.
+
+> **🤖 Consejo de RepoMentor:**
+> ¡Este proyecto es tu "Hola, Mundo!" del hardware! Nunca lo subestimes. Demuestra que sabes configurar tu entorno, compilar código y energizar un actuador básico.
+
+---
+
+## 📸 Demostración del Proyecto
+
+(¡Aquí pones una foto, o mejor, un GIF animado de tu circuito parpadeando!)
+
+![Demo del LED Parpadeando](Blink-Demo.gif)
 
 ---
 
@@ -19,27 +34,25 @@
     -   Enviar señales eléctricas (HIGH y LOW) para encender y apagar un LED.
     -   Utilizar la función `delay()` para controlar el tiempo del parpadeo.
 
----
-
 ## 3) Alcance y Exclusiones
 
--   **Incluye:** El parpadeo de un solo LED a una frecuencia constante (1 segundo encendido, 1 segundo apagado).
--   **No incluye:** Control de brillo (PWM), lectura de botones, o cualquier tipo de comunicación inalámbrica.
+-   **Incluye:** El parpadeo de un solo LED a una frecuencia constante.
+-   **No incluye:** Control de brillo (PWM), lectura de botones, o cualquier tipo de comunicación.
 
 ---
 
 ## 4) Requisitos
 
 **Software**
--   Arduino IDE (con el gestor de tarjetas ESP32 instalado).
--   Controladores USB (CH340 o CP210x, dependiendo de tu placa).
+1.  Arduino IDE (con el gestor de tarjetas ESP32 instalado).
+2.  Controladores USB (CH340 o CP210x, dependiendo de tu placa).
 
-**Hardware**
--   1x Placa de desarrollo ESP32.
--   1x LED (cualquier color).
--   1x Resistencia de 220 $\Omega$ o 330 $\Omega$ (¡importante para no quemar el LED!).
--   1x Protoboard.
--   2x Cables Jumper (macho-macho).
+**Hardware (Lista de Materiales)**
+1.  Placa de desarrollo ESP32 (x1)
+2.  LED de 5mm (x1)
+3.  Resistencia de 220 $\Omega$ o 330 $\Omega$ (x1)
+4.  Protoboard (x1)
+5.  Cables Jumper (x2)
 
 **Conocimientos previos**
 -   Ninguno. Este es el punto de partida.
@@ -48,9 +61,11 @@
 
 ## 5) Código e Instalación
 
-Aquí tienes el código completo. Este código usa el **Pin GPIO 2**, que en muchas placas ESP32 es el LED azul que ya viene integrado (`LED_BUILTIN`).
+### El Código
 
-```cpp
+El `pin 2` es comúnmente el LED azul que ya viene integrado en la placa (`LED_BUILTIN`).
+
+```arduino
 /*
  * PROYECTO 1: LED BLINK
  * Descripción: Hace parpadear un LED conectado al GPIO 2.
@@ -59,7 +74,6 @@ Aquí tienes el código completo. Este código usa el **Pin GPIO 2**, que en muc
  */
 
 // Definimos una constante para el pin del LED.
-// El pin 2 es comúnmente el LED integrado en la placa (LED_BUILTIN)
 const int LED_PIN = 2; 
 
 void setup() {
