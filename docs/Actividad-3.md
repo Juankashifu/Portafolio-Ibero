@@ -82,3 +82,8 @@ void loop() {
 
 
 ```
+---
+## 5) Galería y Demostración
+
+![Armado en protoboard](recursos/imgs/Blink.jpeg)
+
