@@ -54,6 +54,7 @@ Tuve dos aprendizajes clave en esta práctica:
 Este es el código principal cargado en el ESP32. Se definen los pines de dirección (`in1`, `in2`) y un pin para la señal PWM (`pwm`). Los bucles `for` se encargan de aumentar y disminuir el ciclo de trabajo de 0 a 255.
 
 ```bash
+
 // --- Pines de Control ---
 // Pines para la DIRECCIÓN del motor
 #define in1 25
@@ -71,4 +72,42 @@ int resolucion = 8;
 
 
 void setup() {
+  // Configurar pines de dirección como SALIDA
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  
+  // Configurar el canal PWM con ledcAttach
+  // (canal, frecuencia, resolución)
+  ledcAttach(canalPWM, frecuenciaPWM, resolucion);
+  
+  // Vincular el pin 'pwm' (27) al canal que configuramos
+  ledcAttachPin(pwm, canalPWM);
+}
+
+void loop() {
+  // --- Bucle de Aceleración ---
+  // Incrementa 'i' desde 0 (0% potencia) hasta 255 (100% potencia)
+  for (int i = 0; i <= 255; i++) {
+    // Escribe el valor actual de 'i' en el canal PWM
+    ledcWrite(canalPWM, i);
+    // Fija la dirección (ej. "adelante")
+    digitalWrite(in1, 1);
+    digitalWrite(in2, 0);
+    // Pequeña pausa para ver el efecto
+    delay(10);
+  }
+
+  // --- Bucle de Desaceleración ---
+  // Decrementa 'i' desde 255 (100% potencia) hasta 0 (0% potencia)
+  for (int i = 255; i >= 0; i--) {
+    // Escribe el valor actual de 'i' en el canal PWM
+    ledcWrite(canalPWM, i);
+    // Mantiene la dirección
+    digitalWrite(in1, 1);
+    digitalWrite(in2, 0);
+    // Pequeña pausa
+    delay(10);
+  }
+}
+
 ```
