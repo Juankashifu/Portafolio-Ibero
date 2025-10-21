@@ -52,5 +52,5 @@ El aprendizaje clave fue la **importancia de verificar el hardware** antes de as
 
 ## 5) Galería y Demostració
 
-![Foto del circuito en protoboard con el pulsador](IMG_4844.jpg)
+![Foto del circuito en protoboard con el pulsador](docs/recursos/imgs/Pushbutton-led.jpeg)
 ![Otra vista del prototipo](IMG_4840.jpg)
