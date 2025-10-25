@@ -54,7 +54,7 @@ El aprendizaje clave fue la **importancia de verificar el hardware** antes de as
 
 ![Foto del circuito pulsador y led](recursos/imgs/Pushbutton-led.jpeg)
 
-[![](https://markdown-videos.deta.dev/youtube/gSvUSxzyd-A)](https://youtube.com/shorts/gSvUSxzyd-A?si=Zp90NYVe3DcxXeBG)
+[![Haz clic para ver el video](recursos/imgs/Pushbutton-led.jpeg)](https://youtu.be/https://youtube.com/shorts/gSvUSxzyd-A?si=Zp90NYVe3DcxXeBG)
 
 
 
