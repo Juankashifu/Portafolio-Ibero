@@ -88,6 +88,13 @@ void loop() {
 
 ![BT-Terminal en el teléfono](recursos/imgs/BT-Terminal.jpeg)    
 
-<video controls>
-  <source src="docs/recursos/imgs/BT-Terminal.mp4" type="video/mp4">
-</video>
+
+<iframe width="315" height="560"
+src="https://youtube.com/embed/gSvUSxzyd-A?si=omOr18_7oOBLowMy>"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
+
+
+
