@@ -110,3 +110,9 @@ void loop() {
   // (Aquí se podría agregar un 'for' loop para regresar de 180 a 0)
 }
 ```
+## 6) Galería y Demostración
+
+<iframe width="315" height="560" src="https://youtube.com/embed/HQ-41Au5yZY?si=IA7StfHYK2rIkZYU>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="315" height="560" src="https://youtube.com/embed/mG3Ay1g6QiE?si=4E-t6DuyTSBpe_YJ>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
