@@ -88,6 +88,6 @@ void loop() {
 
 ![BT-Terminal en el teléfono](recursos/imgs/BT-Terminal.jpeg)
 
-<video>
+<video controls>
   <source src="recursos/imgs/BT-Terminal.mp4" type="video/mp4">
 </video>
