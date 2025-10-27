@@ -87,3 +87,7 @@ void loop() {
 ## 5) Galería y Demostración
 
 ![BT-Terminal en el teléfono](recursos/imgs/BT-Terminal.jpeg)
+
+<video controls style="width: 75%; max-width: 800px;">
+  <source src="recursos/imgs/BT-Terminal.mp4" type="video/mp4">
+</video>
