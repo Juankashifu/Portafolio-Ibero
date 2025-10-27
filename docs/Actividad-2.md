@@ -86,7 +86,7 @@ void loop() {
 ---
 ## 5) Galería y Demostración
 
-![BT-Terminal en el teléfono](recursos/imgs/BT-Terminal.jpeg)
+![BT-Terminal en el teléfono](recursos/imgs/BT-Terminal.jpeg)    
 
 <video controls>
   <source src="docs/recursos/imgs/BT-Terminal.mp4" type="video/mp4">
