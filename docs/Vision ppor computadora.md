@@ -112,7 +112,7 @@ esp32.write(mensaje.encode())
 ![Multimedia](https://github.com/user-attachments/assets/925b56c5-983c-4463-8b97-83ee4fd21169)![Multimedia (1)](https://github.com/user-attachments/assets/f7d7f766-1d27-45a5-99fc-aa2649a0c96f)![Foto seleccionada](https://github.com/user-attachments/assets/6f1e95bc-75f0-48e3-ade8-899db7e5f94b)
 
 ---
-## Código P
+## Códigos
 
 Python (Visión por Computadora)
 
@@ -124,7 +124,7 @@ import numpy as np
 import serial
 import serial.tools.list_ports
 
-# ------------------- Configuración Serial Bluetooth -------------------
+# -------------- Configuración Serial Bluetooth --------------
 ```bash
 esp32_port = 'COM3'
 baud_rate = 115200
@@ -272,7 +272,7 @@ while True:
     centrox, centroy = width//2, height//2
 ``` 
     
- ## DETECCIÓN 1: PLATAFORMA NEGRA (HSV) - ÁREA MÁS GRANDE
+## DETECCIÓN 1: PLATAFORMA NEGRA (HSV) - ÁREA MÁS GRANDE
     
 ```bash
     hsv_plat = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
