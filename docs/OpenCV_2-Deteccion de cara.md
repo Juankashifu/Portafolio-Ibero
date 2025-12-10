@@ -13,7 +13,7 @@ Específicamente, aprendí a utilizar el módulo `dnn` (Deep Neural Networks) de
 
 En la imagen se observa cómo el algoritmo identifica el rostro del usuario y dibuja una "Bounding Box" (caja delimitadora) verde, mostrando además el nivel de confianza (probabilidad) de que sea una cara (en este caso, 100% o 1.0000).
 
-![deteccion cara](docs/recursos/imgs/Deteccion de cara.png)
+![deteccion cara](recursos/imgs/Deteccion de cara.png)
 
 ## 🛠️ Tecnologías y Librerías
 
