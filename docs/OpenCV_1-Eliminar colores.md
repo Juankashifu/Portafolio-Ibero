@@ -102,6 +102,6 @@ while True:
 
 video.release()
 cv2.destroyAllWindows()
-
+```
 ## 6) Galería y Demostración
 ![Eliminar colores](recursos/imgs/Eliminar colores.png)
