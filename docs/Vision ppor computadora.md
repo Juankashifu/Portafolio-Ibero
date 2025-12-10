@@ -306,9 +306,7 @@ while True:
                 cy_plat = int(M["m01"] / M["m00"])
                 centro_plataforma = (cx_plat, cy_plat)
  ```
-   # ===============================================================
-   # DETECCIÓN 2: PELOTA AZUL
-   # ===============================================================
+## DETECCIÓN 2: PELOTA AZUL
 ```bash
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     mask_pelota = cv2.inRange(hsv, LOW_BLUE, HIGH_BLUE)
@@ -333,9 +331,7 @@ while True:
             if radio_pelota > RADIO_MIN_PELOTA and area > AREA_MIN_PELOTA:
                 centro_pelota = (int(x_pel), int(y_pel))
 ```    
-   # ===============================================================
-   # VISUALIZACIÓN
-   # ===============================================================
+## VISUALIZACIÓN
 ```bash    
     out_original = frame.copy()
     
@@ -345,9 +341,7 @@ while True:
     out_deteccion[mask_plataforma > 0] = [255, 0, 0]
     out_deteccion[mask_pelota > 0] = [0, 255, 255]
 ``` 
-   # ===============================================================
-   # CALCULAR TIEMPO
-   # ===============================================================
+## CALCULAR TIEMPO
 ```bash
     current_time = time.time()
     dt = current_time - prev_time
@@ -355,9 +349,7 @@ while True:
     if dt < 0.001:
         dt = 0.001
 ``` 
-   # ===============================================================
-   # CONTROL PID - SOLO CAMBIO: ERROR X
-   # ===============================================================
+## CONTROL PID - SOLO CAMBIO: ERROR X
 ```bash
     plataforma_detectada = (contorno_plat is not None and area_max_plat > AREA_MIN_PLATAFORMA and centro_plataforma is not None)
     pelota_detectada = (contorno_pelota is not None and centro_pelota is not None)
@@ -383,10 +375,8 @@ while True:
             cv2.line(out_original, centro_plataforma, centro_pelota, (255, 0, 255), 2)
             cv2.line(out_deteccion, centro_plataforma, centro_pelota, (255, 255, 255), 2)
 ```            
-   # ===============================================================
-   # CALCULAR ERROR: Pelota respecto al centro de la plataforma
-   # SOLO CAMBIO: X sin signo negativo
-   # ===============================================================
+## CALCULAR ERROR: Pelota respecto al centro de la plataforma
+## SOLO CAMBIO: X sin signo negativo
 ```bash
             error_x = (centro_pelota[0] - centro_plataforma[0])  # CORREGIDO X
             error_y = (centro_pelota[1] - centro_plataforma[1])  # Y sigue invertido
