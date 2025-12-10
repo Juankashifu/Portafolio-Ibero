@@ -33,9 +33,14 @@ El robot fue construido utilizando:
 
 ---
 
-## Enlace al Video de Funcionamiento
+## Videos de funcionamiento
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DKz_INuIVa4?si=97mvJ8qBUY1MIGO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="315" height="560" src="https://youtube.com/embed/PCshXEOQXE4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 [Video demostrativo del robot](https://youtu.be/BvbTCJa57hE?si=qvqjtdl9Kl7VjMze)
+
+
 
 > Demostración del sistema detectando la pelota, calculando la posición y moviendo los servomotores en tiempo real.
 
@@ -131,7 +136,7 @@ import numpy as np
 import serial
 import serial.tools.list_ports
 
-# -------------- Configuración Serial Bluetooth --------------
+###Configuración Serial Bluetooth
 ```bash
 esp32_port = 'COM3'
 baud_rate = 115200
@@ -170,7 +175,7 @@ except Exception as e:
 
 print("=" * 50)
 ```
-## Configuración cámara 
+### Configuración cámara 
 ```bash
 cap = cv2.VideoCapture(1)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
@@ -180,7 +185,7 @@ if not cap.isOpened():
     print("Error: No se pudo abrir la cámara")
     exit()
 ```
-## Posición inicial servos 
+### Posición inicial servos 
 ```bash
 center_angle = 50
 current_x = center_angle
@@ -188,7 +193,7 @@ current_y = center_angle
 DEAD_ZONE = 15  # Zona muerta reducida
 smoothing = 0.3  # Suavizado reducido para respuesta más rápida
 ```
-## Parámetros PID ajustables 
+### Parámetros PID ajustables 
 ```bash
 Kp = 0.15
 Ki = 0.001
@@ -201,7 +206,7 @@ integral_y = 0
 
 MAX_INTEGRAL = 50
 ```
-## Parámetros de detección
+### Parámetros de detección
 ```bash
 # Threshold para plataforma NEGRA (0-255, valor V en HSV)
 THRESHOLD_PLATAFORMA = 120  # Ampliado para detectar más tonos
@@ -213,12 +218,12 @@ HIGH_BLUE = np.array([130, 255, 255])
 AREA_MIN_PELOTA = 200
 RADIO_MIN_PELOTA = 8
 ```
-## Función para limitar valores 
+### Función para limitar valores 
 ```bash
 def constrain(value, min_val, max_val):
     return max(min_val, min(max_val, value))
 ```
-## Callbacks para sliders 
+### Callbacks para sliders 
 ```bash
 def update_kp(val):
     global Kp
@@ -235,7 +240,7 @@ def update_kd(val):
     Kd = val / 100.0  # Slider 0-100, valor real 0.00-1.00
     print(f"Kd = {Kd:.3f}")
 ```
-## Crear ventana de control 
+### Crear ventana de control 
 ```bash
 cv2.namedWindow('Control PID')
 cv2.createTrackbar('Kp x100', 'Control PID', int(Kp * 100), 100, update_kp)
@@ -279,7 +284,7 @@ while True:
     centrox, centroy = width//2, height//2
 ``` 
     
-## DETECCIÓN 1: PLATAFORMA NEGRA (HSV) - ÁREA MÁS GRANDE
+### DETECCIÓN 1: PLATAFORMA NEGRA (HSV) - ÁREA MÁS GRANDE
     
 ```bash
     hsv_plat = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -313,7 +318,7 @@ while True:
                 cy_plat = int(M["m01"] / M["m00"])
                 centro_plataforma = (cx_plat, cy_plat)
  ```
-## DETECCIÓN 2: PELOTA AZUL
+### DETECCIÓN 2: PELOTA AZUL
 ```bash
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     mask_pelota = cv2.inRange(hsv, LOW_BLUE, HIGH_BLUE)
@@ -338,7 +343,7 @@ while True:
             if radio_pelota > RADIO_MIN_PELOTA and area > AREA_MIN_PELOTA:
                 centro_pelota = (int(x_pel), int(y_pel))
 ```    
-## VISUALIZACIÓN
+### VISUALIZACIÓN
 ```bash    
     out_original = frame.copy()
     
@@ -348,7 +353,7 @@ while True:
     out_deteccion[mask_plataforma > 0] = [255, 0, 0]
     out_deteccion[mask_pelota > 0] = [0, 255, 255]
 ``` 
-## CALCULAR TIEMPO
+### CALCULAR TIEMPO
 ```bash
     current_time = time.time()
     dt = current_time - prev_time
@@ -356,7 +361,7 @@ while True:
     if dt < 0.001:
         dt = 0.001
 ``` 
-## CONTROL PID - SOLO CAMBIO: ERROR X
+### CONTROL PID - SOLO CAMBIO: ERROR X
 ```bash
     plataforma_detectada = (contorno_plat is not None and area_max_plat > AREA_MIN_PLATAFORMA and centro_plataforma is not None)
     pelota_detectada = (contorno_pelota is not None and centro_pelota is not None)
@@ -382,8 +387,8 @@ while True:
             cv2.line(out_original, centro_plataforma, centro_pelota, (255, 0, 255), 2)
             cv2.line(out_deteccion, centro_plataforma, centro_pelota, (255, 255, 255), 2)
 ```            
-## CALCULAR ERROR: Pelota respecto al centro de la plataforma
-## SOLO CAMBIO: X sin signo negativo
+### CALCULAR ERROR: Pelota respecto al centro de la plataforma
+SOLO CAMBIO: X sin signo negativo
 ```bash
             error_x = (centro_pelota[0] - centro_plataforma[0])  # CORREGIDO X
             error_y = (centro_pelota[1] - centro_plataforma[1])  # Y sigue invertido
