@@ -48,7 +48,9 @@ El robot fue construido utilizando:
 |     Servomotor MG996R |   2   | 15 kg torque            |
 |                 ESP32 |   1   | Control y comunicación  |
 |        Plataforma MDF |   1   | Soporte físico          |
+|   Base de servos  MDF |   1   | Soporte físico          |
 | Piezas impresas en 3D |   4+  | Articulaciones y brazos |
+|        Plataforma MDF |   1   | Soporte físico          |
 
 ---
 
@@ -112,6 +114,10 @@ esp32.write(mensaje.encode())
 ![Multimedia](https://github.com/user-attachments/assets/925b56c5-983c-4463-8b97-83ee4fd21169)![Multimedia (1)](https://github.com/user-attachments/assets/f7d7f766-1d27-45a5-99fc-aa2649a0c96f)![Foto seleccionada](https://github.com/user-attachments/assets/6f1e95bc-75f0-48e3-ade8-899db7e5f94b)
 
 ![Armado](recursos/imgs/Armado.jpg)
+![Armado_y_codigo](recursos/imgs/Armado_y_codigo.jpg)
+![impresion_3d](recursos/imgs/Impresion_3d.png)
+
+
 ---
 ## Códigos
 
