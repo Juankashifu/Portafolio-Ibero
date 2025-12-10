@@ -13,7 +13,8 @@ El objetivo específico fue aprender a descomponer una imagen de video en sus ca
 
 En la siguiente imagen se observa la manipulación de canales en tiempo real. Se eliminaron los componentes Azul y Verde (dejando solo el Rojo) y se dibujó una región "ciega" (cuadro negro).
 
-![Filtro de color rojo y dibujo](docs/recursos/imgs/Eliminar%20colores.jpg)
+![Filtro de color rojo y dibujo](recursos/imgs/Eliminar%20colores.jpg)
+![Eliminar colores](recursos/imgs/Eliminar colores.png)
 
 ## 🛠️ Tecnologías y Librerías
 
@@ -103,5 +104,3 @@ while True:
 video.release()
 cv2.destroyAllWindows()
 ```
-## 6) Galería y Demostración
-![Eliminar colores](recursos/imgs/Eliminar colores.png)
