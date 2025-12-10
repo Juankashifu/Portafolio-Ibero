@@ -1,0 +1,2155 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Presentaci%C3%B3n/">
+      
+      
+        <link rel="next" href="../comandos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Robot con Visión por Computadora y Control PID - Plantilla para Documentación</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#robot-con-vision-por-computadora-y-control-pid" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Plantilla para Documentación" class="md-header__button md-logo" aria-label="Plantilla para Documentación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Plantilla para Documentación
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Robot con Visión por Computadora y Control PID
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Plantilla para Documentación" class="md-nav__button md-logo" aria-label="Plantilla para Documentación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Plantilla para Documentación
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación del Proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Actividad-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Práctica 1: Control de LED con Pulsador (Entrada Digital)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Actividad-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Práctica 2: Control de LED por Bluetooth (Comunicación Serial)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Actividad-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Práctica 3: "Blink" (Parpadeo Básico de LED)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Actividad-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Práctica 4: Control de Giro de Motor DC con Puente H
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Actividad-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Práctica 5: Aceleración Suave con ESP32 y Puente H
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Actividad-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Práctica 6: Control de Posición con Servomotor SG90
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCV_1-Eliminar%20colores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎨 [Fundamentos de Visión Artificial: Colores y Figuras]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCV_2-Deteccion%20de%20cara/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 [Visión Artificial: Detección de Rostros con DNN]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot con Visión por Computadora y Control PID
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot con Visión por Computadora y Control PID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descripción General
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características Principales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos-de-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos de funcionamiento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-utilizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Utilizado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-utilizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Utilizado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionamiento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-deteccion-de-plataforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Detección de Plataforma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deteccion-de-pelota-azul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Detección de Pelota Azul
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-calculo-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cálculo de Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-control-pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Control PID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-envio-al-esp32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Envío al ESP32
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mecanica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mecánica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Códigos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Códigos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-serial-bluetooth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración Serial Bluetooth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-camara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración cámara
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicion-inicial-servos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posición inicial servos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-pid-ajustables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros PID ajustables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-de-deteccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros de detección
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcion-para-limitar-valores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Función para limitar valores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks-para-sliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks para sliders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-ventana-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear ventana de control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-1-plataforma-negra-hsv-area-mas-grande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DETECCIÓN 1: PLATAFORMA NEGRA (HSV) - ÁREA MÁS GRANDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VISUALIZACIÓN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular-tiempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CALCULAR TIEMPO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-pid-solo-cambio-error-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTROL PID - SOLO CAMBIO: ERROR X
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular-error-pelota-respecto-al-centro-de-la-plataforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CALCULAR ERROR: Pelota respecto al centro de la plataforma
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-esp32-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código ESP32 / Arduino
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-y-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación y Uso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusiones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licencia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encabezados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Ejemplo de Documentación del Proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitcmds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Comandos básicos de Git (primeros pasos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descripción General
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características Principales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos-de-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos de funcionamiento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-utilizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Utilizado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-utilizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Utilizado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionamiento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-deteccion-de-plataforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Detección de Plataforma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deteccion-de-pelota-azul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Detección de Pelota Azul
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-calculo-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cálculo de Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-control-pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Control PID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-envio-al-esp32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Envío al ESP32
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mecanica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mecánica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Códigos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Códigos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-serial-bluetooth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración Serial Bluetooth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-camara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración cámara
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicion-inicial-servos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posición inicial servos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-pid-ajustables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros PID ajustables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-de-deteccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros de detección
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcion-para-limitar-valores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Función para limitar valores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks-para-sliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks para sliders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-ventana-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear ventana de control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-1-plataforma-negra-hsv-area-mas-grande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DETECCIÓN 1: PLATAFORMA NEGRA (HSV) - ÁREA MÁS GRANDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VISUALIZACIÓN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular-tiempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CALCULAR TIEMPO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-pid-solo-cambio-error-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTROL PID - SOLO CAMBIO: ERROR X
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular-error-pelota-respecto-al-centro-de-la-plataforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CALCULAR ERROR: Pelota respecto al centro de la plataforma
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-esp32-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código ESP32 / Arduino
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-y-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación y Uso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusiones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licencia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="robot-con-vision-por-computadora-y-control-pid">Robot con Visión por Computadora y Control PID</h1>
+<h2 id="descripcion-general">Descripción General</h2>
+<p>Este proyecto consiste en un <em>robot balanceador con plataforma móvil, controlado mediante </em><em>visión por computadora (OpenCV)</em> y estabilizado con <em>dos servomotores MG996R. El sistema detecta una </em><em>pelota azul</em> sobre una plataforma negra y ajusta la inclinación mediante un <em>control PID en tiempo real</em>.</p>
+<p>El robot fue construido utilizando:</p>
+<ul>
+<li><em>2 servomotores MG996R de 15 kg</em></li>
+<li><em>Estructura y articulaciones impresas en 3D</em></li>
+<li><em>Plataforma de MDF</em></li>
+<li><em>ESP32 con comunicación por Bluetooth</em></li>
+<li><em>Python + OpenCV para visión por computadora</em></li>
+</ul>
+<hr />
+<h2 id="autores">Autores</h2>
+<ul>
+<li>Eduardo Salamanca</li>
+<li>Juan Carlos Pérez</li>
+<li>André Sánchez</li>
+<li>Sebastián Sánchez</li>
+</ul>
+<hr />
+<h2 id="caracteristicas-principales">Características Principales</h2>
+<ul>
+<li>Detección de <em>plataforma negra</em> mediante segmentación HSV.</li>
+<li>Detección de <em>pelota azul</em> y cálculo preciso del centro.</li>
+<li>Control PID ajustable en tiempo real mediante <em>sliders en OpenCV</em>.</li>
+<li>Comunicación serial Bluetooth con ESP32.</li>
+<li>Movimientos suaves gracias a filtros y suavizado.</li>
+</ul>
+<hr />
+<h2 id="videos-de-funcionamiento">Videos de funcionamiento</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DKz_INuIVa4?si=97mvJ8qBUY1MIGO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="315" height="560" src="https://youtube.com/embed/PCshXEOQXE4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><a href="https://youtu.be/BvbTCJa57hE?si=qvqjtdl9Kl7VjMze">Video demostrativo del robot</a></p>
+<blockquote>
+<p>Demostración del sistema detectando la pelota, calculando la posición y moviendo los servomotores en tiempo real.</p>
+</blockquote>
+<hr />
+<h2 id="hardware-utilizado">Hardware Utilizado</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Componente</th>
+<th style="text-align: center;">Cant.</th>
+<th>Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Servomotor MG996R</td>
+<td style="text-align: center;">2</td>
+<td>15 kg torque</td>
+</tr>
+<tr>
+<td style="text-align: right;">ESP32</td>
+<td style="text-align: center;">1</td>
+<td>Control y comunicación</td>
+</tr>
+<tr>
+<td style="text-align: right;">Plataforma MDF</td>
+<td style="text-align: center;">1</td>
+<td>Soporte físico</td>
+</tr>
+<tr>
+<td style="text-align: right;">Base de servos  MDF</td>
+<td style="text-align: center;">1</td>
+<td>Soporte físico</td>
+</tr>
+<tr>
+<td style="text-align: right;">Piezas impresas en 3D</td>
+<td style="text-align: center;">4+</td>
+<td>Articulaciones y brazos</td>
+</tr>
+<tr>
+<td style="text-align: right;">Plataforma MDF</td>
+<td style="text-align: center;">1</td>
+<td>Soporte físico</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="software-utilizado">Software Utilizado</h2>
+<ul>
+<li><em>Python 3.10+</em></li>
+<li><em>OpenCV</em></li>
+<li><em>NumPy</em></li>
+<li><em>PySerial</em></li>
+<li><em>Arduino IDE</em></li>
+</ul>
+<hr />
+<h2 id="funcionamiento">Funcionamiento</h2>
+<h3 id="1-deteccion-de-plataforma">1. Detección de Plataforma</h3>
+<p>Se segmenta el área negra mediante un threshold en HSV:</p>
+<p>python
+lower_black = np.array([0, 0, 0])
+upper_black = np.array([180, 255, THRESHOLD_PLATAFORMA])</p>
+<p>Se obtiene el contorno más grande y su centro.</p>
+<h3 id="2-deteccion-de-pelota-azul">2. Detección de Pelota Azul</h3>
+<p>python
+LOW_BLUE = np.array([100, 150, 70])
+HIGH_BLUE = np.array([130, 255, 255])</p>
+<p>Se calcula centro y radio para validar detección.</p>
+<h3 id="3-calculo-de-error">3. Cálculo de Error</h3>
+<p>python
+error_x = centro_pelota.x - centro_plataforma.x
+error_y = centro_pelota.y - centro_plataforma.y</p>
+<h3 id="4-control-pid">4. Control PID</h3>
+<p>python
+output_x = Kp<em>error_x + Ki</em>integral_x + Kd*derivative_x</p>
+<p>Sliders en OpenCV permiten ajustar Kp, Ki y Kd.</p>
+<h3 id="5-envio-al-esp32">5. Envío al ESP32</h3>
+<p>python
+mensaje = f"{int(current_x)},{int(current_y)}\n"
+esp32.write(mensaje.encode())</p>
+<hr />
+<h2 id="mecanica">Mecánica</h2>
+<p><img alt="Multimedia" src="https://github.com/user-attachments/assets/925b56c5-983c-4463-8b97-83ee4fd21169" /><img alt="Multimedia (1)" src="https://github.com/user-attachments/assets/f7d7f766-1d27-45a5-99fc-aa2649a0c96f" /><img alt="Foto seleccionada" src="https://github.com/user-attachments/assets/6f1e95bc-75f0-48e3-ade8-899db7e5f94b" /></p>
+<p><img alt="Armado" src="../recursos/imgs/Armado.jpg" />
+<img alt="Armado_y_codigo" src="../recursos/imgs/Armado_y_codigo.jpg" />
+<img alt="impresion_3d" src="../recursos/imgs/Impresion_3d.png" /></p>
+<hr />
+<h2 id="codigos">Códigos</h2>
+<p>Python (Visión por Computadora)</p>
+<p>python</p>
+<p>import cv2
+import time
+import numpy as np
+import serial
+import serial.tools.list_ports</p>
+<h3 id="configuracion-serial-bluetooth">Configuración Serial Bluetooth</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">esp32_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;COM3&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">baud_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">115200</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>print<span class="o">(</span><span class="s2">&quot;=&quot;</span><span class="w"> </span>*<span class="w"> </span><span class="m">50</span><span class="o">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>print<span class="o">(</span><span class="s2">&quot;Intentando conectar con ESP32...&quot;</span><span class="o">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>print<span class="o">(</span>f<span class="s2">&quot;Puerto: {esp32_port} | Baudios: {baud_rate}&quot;</span><span class="o">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>def<span class="w"> </span>listar_puertos<span class="o">()</span>:
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nv">puertos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>serial.tools.list_ports.comports<span class="o">()</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;\n Puertos COM disponibles:&quot;</span><span class="o">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span>len<span class="o">(</span>puertos<span class="o">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span>print<span class="o">(</span><span class="s2">&quot;  No se encontraron puertos COM&quot;</span><span class="o">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span>puerto<span class="w"> </span><span class="k">in</span><span class="w"> </span>puertos:
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span>print<span class="o">(</span>f<span class="s2">&quot;   • {puerto.device}: {puerto.description}&quot;</span><span class="o">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span>print<span class="o">()</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>listar_puertos<span class="o">()</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>try:
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nv">esp32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>serial.Serial<span class="o">(</span>esp32_port,<span class="w"> </span>baud_rate,<span class="w"> </span><span class="nv">timeout</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span>time.sleep<span class="o">(</span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span>print<span class="o">(</span>f<span class="s2">&quot; ¡Conectado al ESP32 en {esp32_port}!&quot;</span><span class="o">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>except<span class="w"> </span>serial.SerialException<span class="w"> </span>as<span class="w"> </span>e:
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span>print<span class="o">(</span>f<span class="s2">&quot; Error de conexión serial: {e}&quot;</span><span class="o">)</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;\n Posibles soluciones:&quot;</span><span class="o">)</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;   1. Verifica que el puerto COM sea correcto&quot;</span><span class="o">)</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;   2. Cierra el IDE de Arduino si está abierto&quot;</span><span class="o">)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;   3. Cierra cualquier monitor serial activo&quot;</span><span class="o">)</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;   4. Desconecta y reconecta el ESP32&quot;</span><span class="o">)</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;   5. Verifica que el ESP32 esté encendido&quot;</span><span class="o">)</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="nv">esp32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>None
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>except<span class="w"> </span>Exception<span class="w"> </span>as<span class="w"> </span>e:
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span>print<span class="o">(</span>f<span class="s2">&quot; Error inesperado: {e}&quot;</span><span class="o">)</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="nv">esp32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>None
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>print<span class="o">(</span><span class="s2">&quot;=&quot;</span><span class="w"> </span>*<span class="w"> </span><span class="m">50</span><span class="o">)</span>
+</span></code></pre></div>
+<h3 id="configuracion-camara">Configuración cámara</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.VideoCapture<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cap.set<span class="o">(</span>cv2.CAP_PROP_FRAME_WIDTH,<span class="w"> </span><span class="m">640</span><span class="o">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cap.set<span class="o">(</span>cv2.CAP_PROP_FRAME_HEIGHT,<span class="w"> </span><span class="m">480</span><span class="o">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>cap.isOpened<span class="o">()</span>:
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;Error: No se pudo abrir la cámara&quot;</span><span class="o">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span>exit<span class="o">()</span>
+</span></code></pre></div>
+<h3 id="posicion-inicial-servos">Posición inicial servos</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">center_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">current_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>center_angle
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">current_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>center_angle
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">DEAD_ZONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="w">  </span><span class="c1"># Zona muerta reducida</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">smoothing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.3<span class="w">  </span><span class="c1"># Suavizado reducido para respuesta más rápida</span>
+</span></code></pre></div>
+<h3 id="parametros-pid-ajustables">Parámetros PID ajustables</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">Kp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.15
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">Ki</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.001
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">Kd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.20
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nv">prev_error_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nv">prev_error_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nv">integral_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nv">integral_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nv">MAX_INTEGRAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span>
+</span></code></pre></div>
+<h3 id="parametros-de-deteccion">Parámetros de detección</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Threshold para plataforma NEGRA (0-255, valor V en HSV)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">THRESHOLD_PLATAFORMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">120</span><span class="w">  </span><span class="c1"># Ampliado para detectar más tonos</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nv">AREA_MIN_PLATAFORMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="w">  </span><span class="c1"># Área mínima del cuadrado</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Rango HSV para pelota azul</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nv">LOW_BLUE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>np.array<span class="o">([</span><span class="m">100</span>,<span class="w"> </span><span class="m">150</span>,<span class="w"> </span><span class="m">70</span><span class="o">])</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nv">HIGH_BLUE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>np.array<span class="o">([</span><span class="m">130</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">255</span><span class="o">])</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nv">AREA_MIN_PELOTA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nv">RADIO_MIN_PELOTA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span>
+</span></code></pre></div>
+<h3 id="funcion-para-limitar-valores">Función para limitar valores</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>def<span class="w"> </span>constrain<span class="o">(</span>value,<span class="w"> </span>min_val,<span class="w"> </span>max_val<span class="o">)</span>:
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span>max<span class="o">(</span>min_val,<span class="w"> </span>min<span class="o">(</span>max_val,<span class="w"> </span>value<span class="o">))</span>
+</span></code></pre></div>
+<h3 id="callbacks-para-sliders">Callbacks para sliders</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>def<span class="w"> </span>update_kp<span class="o">(</span>val<span class="o">)</span>:
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>global<span class="w"> </span>Kp
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nv">Kp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>val<span class="w"> </span>/<span class="w"> </span><span class="m">100</span>.0<span class="w">  </span><span class="c1"># Slider 0-100, valor real 0.00-1.00</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>print<span class="o">(</span>f<span class="s2">&quot;Kp = {Kp:.3f}&quot;</span><span class="o">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>def<span class="w"> </span>update_ki<span class="o">(</span>val<span class="o">)</span>:
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span>global<span class="w"> </span>Ki
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nv">Ki</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>val<span class="w"> </span>/<span class="w"> </span><span class="m">1000</span>.0<span class="w">  </span><span class="c1"># Slider 0-100, valor real 0.000-0.100</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span>print<span class="o">(</span>f<span class="s2">&quot;Ki = {Ki:.4f}&quot;</span><span class="o">)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>def<span class="w"> </span>update_kd<span class="o">(</span>val<span class="o">)</span>:
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span>global<span class="w"> </span>Kd
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nv">Kd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>val<span class="w"> </span>/<span class="w"> </span><span class="m">100</span>.0<span class="w">  </span><span class="c1"># Slider 0-100, valor real 0.00-1.00</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span>print<span class="o">(</span>f<span class="s2">&quot;Kd = {Kd:.3f}&quot;</span><span class="o">)</span>
+</span></code></pre></div>
+<h3 id="crear-ventana-de-control">Crear ventana de control</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cv2.namedWindow<span class="o">(</span><span class="s1">&#39;Control PID&#39;</span><span class="o">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cv2.createTrackbar<span class="o">(</span><span class="s1">&#39;Kp x100&#39;</span>,<span class="w"> </span><span class="s1">&#39;Control PID&#39;</span>,<span class="w"> </span>int<span class="o">(</span>Kp<span class="w"> </span>*<span class="w"> </span><span class="m">100</span><span class="o">)</span>,<span class="w"> </span><span class="m">100</span>,<span class="w"> </span>update_kp<span class="o">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>cv2.createTrackbar<span class="o">(</span><span class="s1">&#39;Ki x1000&#39;</span>,<span class="w"> </span><span class="s1">&#39;Control PID&#39;</span>,<span class="w"> </span>int<span class="o">(</span>Ki<span class="w"> </span>*<span class="w"> </span><span class="m">1000</span><span class="o">)</span>,<span class="w"> </span><span class="m">100</span>,<span class="w"> </span>update_ki<span class="o">)</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>cv2.createTrackbar<span class="o">(</span><span class="s1">&#39;Kd x100&#39;</span>,<span class="w"> </span><span class="s1">&#39;Control PID&#39;</span>,<span class="w"> </span>int<span class="o">(</span>Kd<span class="w"> </span>*<span class="w"> </span><span class="m">100</span><span class="o">)</span>,<span class="w"> </span><span class="m">100</span>,<span class="w"> </span>update_kd<span class="o">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nv">prev_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>time.time<span class="o">()</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>print<span class="o">(</span><span class="s2">&quot;=&quot;</span><span class="w"> </span>*<span class="w"> </span><span class="m">50</span><span class="o">)</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>print<span class="o">(</span><span class="s2">&quot;Sistema de Balance: Plataforma + Pelota&quot;</span><span class="o">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>print<span class="o">(</span><span class="s2">&quot;=&quot;</span><span class="w"> </span>*<span class="w"> </span><span class="m">50</span><span class="o">)</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>print<span class="o">(</span><span class="s2">&quot;CONFIGURACIÓN:&quot;</span><span class="o">)</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>print<span class="o">(</span>f<span class="s2">&quot;  • Centro servos: {center_angle}° (Rango: 0-180°)&quot;</span><span class="o">)</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>print<span class="o">(</span>f<span class="s2">&quot;  • Zona muerta: ±{DEAD_ZONE} píxeles&quot;</span><span class="o">)</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>print<span class="o">(</span>f<span class="s2">&quot;  • Suavizado: {smoothing}&quot;</span><span class="o">)</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>print<span class="o">(</span>f<span class="s2">&quot;  • Threshold plataforma: {THRESHOLD_PLATAFORMA}&quot;</span><span class="o">)</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>print<span class="o">(</span>f<span class="s2">&quot;  • PID: Kp={Kp} Ki={Ki} Kd={Kd}&quot;</span><span class="o">)</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>print<span class="o">(</span><span class="s2">&quot;\nDETECCIÓN:&quot;</span><span class="o">)</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>print<span class="o">(</span><span class="s2">&quot;  • PLATAFORMA NEGRA (HSV): Detecta área más grande de tonos oscuros&quot;</span><span class="o">)</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>print<span class="o">(</span><span class="s2">&quot;  • PELOTA AZUL: Posición para calcular error&quot;</span><span class="o">)</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>print<span class="o">(</span><span class="s2">&quot;  • Usa teclas &#39;1&#39;/&#39;2&#39; para ajustar threshold&quot;</span><span class="o">)</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>print<span class="o">(</span><span class="s2">&quot;\nCONTROLES:&quot;</span><span class="o">)</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>print<span class="o">(</span><span class="s2">&quot;  • &#39;q&#39; → Salir&quot;</span><span class="o">)</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>print<span class="o">(</span><span class="s2">&quot;  • &#39;c&#39; → Resetear integrales&quot;</span><span class="o">)</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>print<span class="o">(</span><span class="s2">&quot;  • &#39;1&#39; → Threshold -5&quot;</span><span class="o">)</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>print<span class="o">(</span><span class="s2">&quot;  • &#39;2&#39; → Threshold +5&quot;</span><span class="o">)</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>print<span class="o">(</span><span class="s2">&quot;  • Sliders → Ajustar PID en tiempo real&quot;</span><span class="o">)</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>print<span class="o">(</span><span class="s2">&quot;=&quot;</span><span class="w"> </span>*<span class="w"> </span><span class="m">50</span><span class="o">)</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="nv">frame_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="nv">fps_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>time.time<span class="o">()</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="nv">fps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="k">while</span><span class="w"> </span>True:
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">    </span>ret,<span class="w"> </span><span class="nv">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cap.read<span class="o">()</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>ret:
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">        </span>print<span class="o">(</span><span class="s2">&quot;Error: No se pudo leer frame de la cámara&quot;</span><span class="o">)</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">        </span><span class="k">break</span>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">    </span><span class="nv">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.flip<span class="o">(</span>frame,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">    </span>height,<span class="w"> </span><span class="nv">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>frame.shape<span class="o">[</span>:2<span class="o">]</span>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="w">    </span>centrox,<span class="w"> </span><span class="nv">centroy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>width//2,<span class="w"> </span>height//2
+</span></code></pre></div>
+<h3 id="deteccion-1-plataforma-negra-hsv-area-mas-grande">DETECCIÓN 1: PLATAFORMA NEGRA (HSV) - ÁREA MÁS GRANDE</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span><span class="nv">hsv_plat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.cvtColor<span class="o">(</span>frame,<span class="w"> </span>cv2.COLOR_BGR2HSV<span class="o">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nv">lower_black</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>np.array<span class="o">([</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">])</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nv">upper_black</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>np.array<span class="o">([</span><span class="m">180</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span>THRESHOLD_PLATAFORMA<span class="o">])</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nv">mask_plataforma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.inRange<span class="o">(</span>hsv_plat,<span class="w"> </span>lower_black,<span class="w"> </span>upper_black<span class="o">)</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nv">kernel_plat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>np.ones<span class="o">((</span><span class="m">7</span>,7<span class="o">)</span>,<span class="w"> </span>np.uint8<span class="o">)</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="nv">mask_plataforma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.morphologyEx<span class="o">(</span>mask_plataforma,<span class="w"> </span>cv2.MORPH_CLOSE,<span class="w"> </span>kernel_plat<span class="o">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="nv">mask_plataforma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.morphologyEx<span class="o">(</span>mask_plataforma,<span class="w"> </span>cv2.MORPH_OPEN,<span class="w"> </span>kernel_plat<span class="o">)</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="nv">mask_plataforma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.dilate<span class="o">(</span>mask_plataforma,<span class="w"> </span>kernel_plat,<span class="w"> </span><span class="nv">iterations</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span>contours_plat,<span class="w"> </span><span class="nv">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.findContours<span class="o">(</span>mask_plataforma,<span class="w"> </span>cv2.RETR_EXTERNAL,<span class="w"> </span>cv2.CHAIN_APPROX_SIMPLE<span class="o">)</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="nv">area_max_plat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="nv">contorno_plat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>None
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="nv">centro_plataforma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>None
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="nv">rectangulo_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>None
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span>c<span class="w"> </span><span class="k">in</span><span class="w"> </span>contours_plat:
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">        </span><span class="nv">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.contourArea<span class="o">(</span>c<span class="o">)</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span>area<span class="w"> </span>&gt;<span class="w"> </span>area_max_plat<span class="w"> </span>and<span class="w"> </span>area<span class="w"> </span>&gt;<span class="w"> </span>AREA_MIN_PLATAFORMA:
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">            </span><span class="nv">area_max_plat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>area
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">            </span><span class="nv">contorno_plat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>c
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">            </span><span class="nv">rectangulo_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.minAreaRect<span class="o">(</span>c<span class="o">)</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">            </span><span class="nv">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.moments<span class="o">(</span>c<span class="o">)</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>M<span class="o">[</span><span class="s2">&quot;m00&quot;</span><span class="o">]</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">                </span><span class="nv">cx_plat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>int<span class="o">(</span>M<span class="o">[</span><span class="s2">&quot;m10&quot;</span><span class="o">]</span><span class="w"> </span>/<span class="w"> </span>M<span class="o">[</span><span class="s2">&quot;m00&quot;</span><span class="o">])</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">                </span><span class="nv">cy_plat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>int<span class="o">(</span>M<span class="o">[</span><span class="s2">&quot;m01&quot;</span><span class="o">]</span><span class="w"> </span>/<span class="w"> </span>M<span class="o">[</span><span class="s2">&quot;m00&quot;</span><span class="o">])</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">                </span><span class="nv">centro_plataforma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>cx_plat,<span class="w"> </span>cy_plat<span class="o">)</span>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w"> </span><span class="sb">```</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="c1">### DETECCIÓN 2: PELOTA AZUL</span>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="sb">```</span>bash
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="w">    </span><span class="nv">hsv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.cvtColor<span class="o">(</span>frame,<span class="w"> </span>cv2.COLOR_BGR2HSV<span class="o">)</span>
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="w">    </span><span class="nv">mask_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.inRange<span class="o">(</span>hsv,<span class="w"> </span>LOW_BLUE,<span class="w"> </span>HIGH_BLUE<span class="o">)</span>
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">    </span><span class="nv">kernel_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>np.ones<span class="o">((</span><span class="m">5</span>,5<span class="o">)</span>,<span class="w"> </span>np.uint8<span class="o">)</span>
+</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="w">    </span><span class="nv">mask_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.morphologyEx<span class="o">(</span>mask_pelota,<span class="w"> </span>cv2.MORPH_OPEN,<span class="w"> </span>kernel_pelota<span class="o">)</span>
+</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="w">    </span><span class="nv">mask_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.morphologyEx<span class="o">(</span>mask_pelota,<span class="w"> </span>cv2.MORPH_CLOSE,<span class="w"> </span>kernel_pelota<span class="o">)</span>
+</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">    </span><span class="nv">mask_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.dilate<span class="o">(</span>mask_pelota,<span class="w"> </span>kernel_pelota,<span class="w"> </span><span class="nv">iterations</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>
+</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="w">    </span>contours_pelota,<span class="w"> </span><span class="nv">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.findContours<span class="o">(</span>mask_pelota,<span class="w"> </span>cv2.RETR_EXTERNAL,<span class="w"> </span>cv2.CHAIN_APPROX_SIMPLE<span class="o">)</span>
+</span><span id="__span-8-43"><a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="w">    </span><span class="nv">area_max_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-8-44"><a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a><span class="w">    </span><span class="nv">contorno_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>None
+</span><span id="__span-8-45"><a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a><span class="w">    </span><span class="nv">centro_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>None
+</span><span id="__span-8-46"><a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a><span class="w">    </span><span class="nv">radio_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-8-47"><a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>
+</span><span id="__span-8-48"><a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span>c<span class="w"> </span><span class="k">in</span><span class="w"> </span>contours_pelota:
+</span><span id="__span-8-49"><a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a><span class="w">        </span><span class="nv">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.contourArea<span class="o">(</span>c<span class="o">)</span>
+</span><span id="__span-8-50"><a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span>area<span class="w"> </span>&gt;<span class="w"> </span>area_max_pelota:
+</span><span id="__span-8-51"><a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a><span class="w">            </span><span class="nv">area_max_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>area
+</span><span id="__span-8-52"><a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a><span class="w">            </span><span class="nv">contorno_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>c
+</span><span id="__span-8-53"><a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a><span class="w">            </span><span class="o">(</span>x_pel,<span class="w"> </span>y_pel<span class="o">)</span>,<span class="w"> </span><span class="nv">radio_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.minEnclosingCircle<span class="o">(</span>c<span class="o">)</span>
+</span><span id="__span-8-54"><a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>radio_pelota<span class="w"> </span>&gt;<span class="w"> </span>RADIO_MIN_PELOTA<span class="w"> </span>and<span class="w"> </span>area<span class="w"> </span>&gt;<span class="w"> </span>AREA_MIN_PELOTA:
+</span><span id="__span-8-55"><a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a><span class="w">                </span><span class="nv">centro_pelota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>int<span class="o">(</span>x_pel<span class="o">)</span>,<span class="w"> </span>int<span class="o">(</span>y_pel<span class="o">))</span>
+</span></code></pre></div>
+<h3 id="visualizacion">VISUALIZACIÓN</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="nv">out_original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>frame.copy<span class="o">()</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nv">mask_combinada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.bitwise_or<span class="o">(</span>mask_plataforma,<span class="w"> </span>mask_pelota<span class="o">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nv">out_deteccion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.cvtColor<span class="o">(</span>mask_combinada,<span class="w"> </span>cv2.COLOR_GRAY2BGR<span class="o">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span>out_deteccion<span class="o">[</span>mask_plataforma<span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span>out_deteccion<span class="o">[</span>mask_pelota<span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">255</span><span class="o">]</span>
+</span></code></pre></div>
+<h3 id="calcular-tiempo">CALCULAR TIEMPO</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="nv">current_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>time.time<span class="o">()</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nv">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>current_time<span class="w"> </span>-<span class="w"> </span>prev_time
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nv">prev_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>current_time
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span>dt<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span>.001:
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="nv">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.001
+</span></code></pre></div>
+<h3 id="control-pid-solo-cambio-error-x">CONTROL PID - SOLO CAMBIO: ERROR X</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">    </span><span class="nv">plataforma_detectada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>contorno_plat<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>None<span class="w"> </span>and<span class="w"> </span>area_max_plat<span class="w"> </span>&gt;<span class="w"> </span>AREA_MIN_PLATAFORMA<span class="w"> </span>and<span class="w"> </span>centro_plataforma<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>None<span class="o">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nv">pelota_detectada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>contorno_pelota<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>None<span class="w"> </span>and<span class="w"> </span>centro_pelota<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>None<span class="o">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span>plataforma_detectada:
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span>rectangulo_info:
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">            </span><span class="nv">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.boxPoints<span class="o">(</span>rectangulo_info<span class="o">)</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">            </span><span class="nv">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>np.intp<span class="o">(</span>box<span class="o">)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">            </span>cv2.drawContours<span class="o">(</span>out_original,<span class="w"> </span><span class="o">[</span>box<span class="o">]</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span><span class="m">3</span><span class="o">)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">            </span>cv2.drawContours<span class="o">(</span>out_deteccion,<span class="w"> </span><span class="o">[</span>box<span class="o">]</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span>cv2.circle<span class="o">(</span>out_original,<span class="w"> </span>centro_plataforma,<span class="w"> </span><span class="m">12</span>,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span><span class="m">3</span><span class="o">)</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span>cv2.circle<span class="o">(</span>out_original,<span class="w"> </span>centro_plataforma,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>-1<span class="o">)</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span><span class="s2">&quot;PLATAFORMA&quot;</span>,<span class="w"> </span><span class="o">(</span>centro_plataforma<span class="o">[</span><span class="m">0</span><span class="o">]</span>-40,<span class="w"> </span>centro_plataforma<span class="o">[</span><span class="m">1</span><span class="o">]</span>-20<span class="o">)</span>,
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">                   </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.5,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span>pelota_detectada:
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">            </span>cv2.circle<span class="o">(</span>out_original,<span class="w"> </span>centro_pelota,<span class="w"> </span>int<span class="o">(</span>radio_pelota<span class="o">)</span>,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">255</span><span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">            </span>cv2.circle<span class="o">(</span>out_original,<span class="w"> </span>centro_pelota,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="o">(</span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>-1<span class="o">)</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">            </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span><span class="s2">&quot;PELOTA&quot;</span>,<span class="w"> </span><span class="o">(</span>centro_pelota<span class="o">[</span><span class="m">0</span><span class="o">]</span>-30,<span class="w"> </span>centro_pelota<span class="o">[</span><span class="m">1</span><span class="o">]</span>+25<span class="o">)</span>,
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">                       </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.5,<span class="w"> </span><span class="o">(</span><span class="m">255</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">            </span>QQQ
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">            </span>cv2.line<span class="o">(</span>out_original,<span class="w"> </span>centro_plataforma,<span class="w"> </span>centro_pelota,<span class="w"> </span><span class="o">(</span><span class="m">255</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">255</span><span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">            </span>cv2.line<span class="o">(</span>out_deteccion,<span class="w"> </span>centro_plataforma,<span class="w"> </span>centro_pelota,<span class="w"> </span><span class="o">(</span><span class="m">255</span>,<span class="w"> </span><span class="m">255</span>,<span class="w"> </span><span class="m">255</span><span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span></code></pre></div>
+<h3 id="calcular-error-pelota-respecto-al-centro-de-la-plataforma">CALCULAR ERROR: Pelota respecto al centro de la plataforma</h3>
+<p>SOLO CAMBIO: X sin signo negativo
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">            </span><span class="nv">error_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>centro_pelota<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span>-<span class="w"> </span>centro_plataforma<span class="o">[</span><span class="m">0</span><span class="o">])</span><span class="w">  </span><span class="c1"># CORREGIDO X</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">            </span><span class="nv">error_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>centro_pelota<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>-<span class="w"> </span>centro_plataforma<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="w">  </span><span class="c1"># Y sigue invertido</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>abs<span class="o">(</span>error_x<span class="o">)</span><span class="w"> </span>&lt;<span class="w"> </span>DEAD_ZONE:<span class="w"> </span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">                </span><span class="nv">error_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>abs<span class="o">(</span>error_y<span class="o">)</span><span class="w"> </span>&lt;<span class="w"> </span>DEAD_ZONE:<span class="w"> </span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">                </span><span class="nv">error_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">            </span><span class="nv">integral_x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>error_x<span class="w"> </span>*<span class="w"> </span>dt
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">            </span><span class="nv">integral_y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>error_y<span class="w"> </span>*<span class="w"> </span>dt
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">            </span><span class="nv">integral_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>constrain<span class="o">(</span>integral_x,<span class="w"> </span>-MAX_INTEGRAL,<span class="w"> </span>MAX_INTEGRAL<span class="o">)</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">            </span><span class="nv">integral_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>constrain<span class="o">(</span>integral_y,<span class="w"> </span>-MAX_INTEGRAL,<span class="w"> </span>MAX_INTEGRAL<span class="o">)</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">            </span><span class="nv">derivative_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>error_x<span class="w"> </span>-<span class="w"> </span>prev_error_x<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>dt
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">            </span><span class="nv">derivative_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>error_y<span class="w"> </span>-<span class="w"> </span>prev_error_y<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>dt
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">            </span><span class="nv">output_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Kp*error_x<span class="w"> </span>+<span class="w"> </span>Ki*integral_x<span class="w"> </span>+<span class="w"> </span>Kd*derivative_x
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">            </span><span class="nv">output_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Kp*error_y<span class="w"> </span>+<span class="w"> </span>Ki*integral_y<span class="w"> </span>+<span class="w"> </span>Kd*derivative_y
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">            </span><span class="nv">prev_error_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>error_x
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">            </span><span class="nv">prev_error_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>error_y
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">            </span><span class="nv">delta_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>output_x<span class="w"> </span>*<span class="w"> </span><span class="m">0</span>.15
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">            </span><span class="nv">delta_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>output_y<span class="w"> </span>*<span class="w"> </span><span class="m">0</span>.15
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">            </span><span class="nv">target_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>center_angle<span class="w"> </span>+<span class="w"> </span>delta_x
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">            </span><span class="nv">target_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>center_angle<span class="w"> </span>+<span class="w"> </span>delta_y
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">            </span><span class="nv">current_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>current_x<span class="w"> </span>*<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>smoothing<span class="o">)</span><span class="w"> </span>+<span class="w"> </span>target_x<span class="w"> </span>*<span class="w"> </span>smoothing
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">            </span><span class="nv">current_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>current_y<span class="w"> </span>*<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>smoothing<span class="o">)</span><span class="w"> </span>+<span class="w"> </span>target_y<span class="w"> </span>*<span class="w"> </span>smoothing
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="w">            </span><span class="nv">current_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>constrain<span class="o">(</span>current_x,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">110</span><span class="o">)</span>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="w">            </span><span class="nv">current_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>constrain<span class="o">(</span>current_y,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">110</span><span class="o">)</span>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>esp32:
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">                </span><span class="nv">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>f<span class="s2">&quot;{int(current_x)},{int(current_y)}\n&quot;</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="w">                </span>try:
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="w">                    </span>esp32.write<span class="o">(</span>mensaje.encode<span class="o">())</span>
+</span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="w">                    </span><span class="k">if</span><span class="w"> </span>esp32.in_waiting<span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-12-40"><a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="w">                        </span><span class="nv">respuesta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>esp32.readline<span class="o">()</span>.decode<span class="o">(</span><span class="s1">&#39;utf-8&#39;</span>,<span class="w"> </span><span class="nv">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="o">)</span>.strip<span class="o">()</span>
+</span><span id="__span-12-41"><a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a><span class="w">                        </span><span class="k">if</span><span class="w"> </span>respuesta<span class="w"> </span>and<span class="w"> </span>frame_count<span class="w"> </span>%<span class="w"> </span><span class="nv">30</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-12-42"><a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a><span class="w">                            </span>print<span class="o">(</span>f<span class="s2">&quot;📡 ESP32: {respuesta}&quot;</span><span class="o">)</span>
+</span><span id="__span-12-43"><a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a><span class="w">                </span>except<span class="w"> </span>Exception<span class="w"> </span>as<span class="w"> </span>e:
+</span><span id="__span-12-44"><a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a><span class="w">                    </span><span class="k">if</span><span class="w"> </span>frame_count<span class="w"> </span>%<span class="w"> </span><span class="nv">30</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-12-45"><a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a><span class="w">                        </span>print<span class="o">(</span>f<span class="s2">&quot;✗ Error: {e}&quot;</span><span class="o">)</span>
+</span><span id="__span-12-46"><a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a>
+</span><span id="__span-12-47"><a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>frame_count<span class="w"> </span>%<span class="w"> </span><span class="nv">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-12-48"><a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a><span class="w">                </span>print<span class="o">(</span>f<span class="s2">&quot;✓ X={int(current_x):3d}° Y={int(current_y):3d}° | Err X={-error_x:4d} Y={-error_y:4d} | Out X={output_x:6.1f} Y={output_y:6.1f}&quot;</span><span class="o">)</span>
+</span><span id="__span-12-49"><a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>
+</span><span id="__span-12-50"><a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a><span class="w">            </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span>f<span class="s2">&quot;Error X:{-error_x} Y:{-error_y}&quot;</span>,<span class="w"> </span><span class="o">(</span><span class="m">10</span>,30<span class="o">)</span>,
+</span><span id="__span-12-51"><a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a><span class="w">                        </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.6,<span class="w"> </span><span class="o">(</span><span class="m">255</span>,255,0<span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-12-52"><a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a><span class="w">            </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span>f<span class="s2">&quot;Servo X:{int(current_x)} Y:{int(current_y)}&quot;</span>,<span class="w"> </span><span class="o">(</span><span class="m">10</span>,60<span class="o">)</span>,
+</span><span id="__span-12-53"><a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a><span class="w">                        </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.6,<span class="w"> </span><span class="o">(</span><span class="m">255</span>,255,0<span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-12-54"><a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a><span class="w">            </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span>f<span class="s2">&quot;Distancia: {int(np.sqrt(error_x**2 + error_y**2))} px&quot;</span>,<span class="w"> </span><span class="o">(</span><span class="m">10</span>,90<span class="o">)</span>,
+</span><span id="__span-12-55"><a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a><span class="w">                        </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.5,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,255,255<span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-12-56"><a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a><span class="w">        </span><span class="k">else</span>:
+</span><span id="__span-12-57"><a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a><span class="w">            </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span><span class="s2">&quot;PELOTA NO DETECTADA&quot;</span>,<span class="w"> </span><span class="o">(</span><span class="m">10</span>,30<span class="o">)</span>,
+</span><span id="__span-12-58"><a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a><span class="w">                        </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.7,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,165,255<span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-12-59"><a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>
+</span><span id="__span-12-60"><a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a><span class="w">            </span><span class="nv">integral_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-61"><a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a><span class="w">            </span><span class="nv">integral_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-62"><a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a><span class="w">            </span><span class="nv">prev_error_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-63"><a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a><span class="w">            </span><span class="nv">prev_error_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-64"><a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a>
+</span><span id="__span-12-65"><a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a><span class="w">            </span><span class="nv">current_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>current_x<span class="w"> </span>*<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>smoothing*0.5<span class="o">)</span><span class="w"> </span>+<span class="w"> </span>center_angle<span class="w"> </span>*<span class="w"> </span>smoothing<span class="w"> </span>*<span class="w"> </span><span class="m">0</span>.5
+</span><span id="__span-12-66"><a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a><span class="w">            </span><span class="nv">current_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>current_y<span class="w"> </span>*<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>smoothing*0.5<span class="o">)</span><span class="w"> </span>+<span class="w"> </span>center_angle<span class="w"> </span>*<span class="w"> </span>smoothing<span class="w"> </span>*<span class="w"> </span><span class="m">0</span>.5
+</span><span id="__span-12-67"><a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a>
+</span><span id="__span-12-68"><a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>esp32<span class="w"> </span>and<span class="w"> </span>frame_count<span class="w"> </span>%<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-12-69"><a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a><span class="w">                </span>try:
+</span><span id="__span-12-70"><a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a><span class="w">                    </span>esp32.write<span class="o">(</span>f<span class="s2">&quot;{int(current_x)},{int(current_y)}\n&quot;</span>.encode<span class="o">())</span>
+</span><span id="__span-12-71"><a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a><span class="w">                </span>except:
+</span><span id="__span-12-72"><a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a><span class="w">                    </span>pass
+</span><span id="__span-12-73"><a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a>
+</span><span id="__span-12-74"><a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>frame_count<span class="w"> </span>%<span class="w"> </span><span class="nv">30</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-12-75"><a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a><span class="w">                </span>print<span class="o">(</span>f<span class="s2">&quot; Solo plataforma. Centrando: X={int(current_x)}° Y={int(current_y)}°&quot;</span><span class="o">)</span>
+</span><span id="__span-12-76"><a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a><span class="w">    </span><span class="k">else</span>:
+</span><span id="__span-12-77"><a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a><span class="w">        </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span><span class="s2">&quot;PLATAFORMA NO DETECTADA&quot;</span>,<span class="w"> </span><span class="o">(</span><span class="m">10</span>,30<span class="o">)</span>,
+</span><span id="__span-12-78"><a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a><span class="w">                    </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.7,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,0,255<span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-12-79"><a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a>
+</span><span id="__span-12-80"><a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a><span class="w">        </span><span class="nv">integral_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-81"><a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a><span class="w">        </span><span class="nv">integral_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-82"><a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a><span class="w">        </span><span class="nv">prev_error_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-83"><a id="__codelineno-12-83" name="__codelineno-12-83" href="#__codelineno-12-83"></a><span class="w">        </span><span class="nv">prev_error_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-84"><a id="__codelineno-12-84" name="__codelineno-12-84" href="#__codelineno-12-84"></a>
+</span><span id="__span-12-85"><a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a><span class="w">        </span><span class="nv">current_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>current_x<span class="w"> </span>*<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>smoothing*0.5<span class="o">)</span><span class="w"> </span>+<span class="w"> </span>center_angle<span class="w"> </span>*<span class="w"> </span>smoothing<span class="w"> </span>*<span class="w"> </span><span class="m">0</span>.5
+</span><span id="__span-12-86"><a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a><span class="w">        </span><span class="nv">current_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>current_y<span class="w"> </span>*<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>smoothing*0.5<span class="o">)</span><span class="w"> </span>+<span class="w"> </span>center_angle<span class="w"> </span>*<span class="w"> </span>smoothing<span class="w"> </span>*<span class="w"> </span><span class="m">0</span>.5
+</span><span id="__span-12-87"><a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a>
+</span><span id="__span-12-88"><a id="__codelineno-12-88" name="__codelineno-12-88" href="#__codelineno-12-88"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span>esp32<span class="w"> </span>and<span class="w"> </span>frame_count<span class="w"> </span>%<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-12-89"><a id="__codelineno-12-89" name="__codelineno-12-89" href="#__codelineno-12-89"></a><span class="w">            </span>try:
+</span><span id="__span-12-90"><a id="__codelineno-12-90" name="__codelineno-12-90" href="#__codelineno-12-90"></a><span class="w">                </span>esp32.write<span class="o">(</span>f<span class="s2">&quot;{int(current_x)},{int(current_y)}\n&quot;</span>.encode<span class="o">())</span>
+</span><span id="__span-12-91"><a id="__codelineno-12-91" name="__codelineno-12-91" href="#__codelineno-12-91"></a><span class="w">            </span>except:
+</span><span id="__span-12-92"><a id="__codelineno-12-92" name="__codelineno-12-92" href="#__codelineno-12-92"></a><span class="w">                </span>pass
+</span><span id="__span-12-93"><a id="__codelineno-12-93" name="__codelineno-12-93" href="#__codelineno-12-93"></a>
+</span><span id="__span-12-94"><a id="__codelineno-12-94" name="__codelineno-12-94" href="#__codelineno-12-94"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span>frame_count<span class="w"> </span>%<span class="w"> </span><span class="nv">30</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>:
+</span><span id="__span-12-95"><a id="__codelineno-12-95" name="__codelineno-12-95" href="#__codelineno-12-95"></a><span class="w">            </span>print<span class="o">(</span>f<span class="s2">&quot; Sin detección. Centrando: X={int(current_x)}° Y={int(current_y)}°&quot;</span><span class="o">)</span>
+</span><span id="__span-12-96"><a id="__codelineno-12-96" name="__codelineno-12-96" href="#__codelineno-12-96"></a>
+</span><span id="__span-12-97"><a id="__codelineno-12-97" name="__codelineno-12-97" href="#__codelineno-12-97"></a><span class="w">    </span>cv2.circle<span class="o">(</span>out_original,<span class="w"> </span><span class="o">(</span>centrox,<span class="w"> </span>centroy<span class="o">)</span>,<span class="w"> </span>DEAD_ZONE,<span class="w"> </span><span class="o">(</span><span class="m">128</span>,128,128<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-12-98"><a id="__codelineno-12-98" name="__codelineno-12-98" href="#__codelineno-12-98"></a><span class="w">    </span>cv2.line<span class="o">(</span>out_original,<span class="w"> </span><span class="o">(</span>centrox-15,<span class="w"> </span>centroy<span class="o">)</span>,<span class="w"> </span><span class="o">(</span>centrox+15,<span class="w"> </span>centroy<span class="o">)</span>,<span class="w"> </span><span class="o">(</span><span class="m">128</span>,128,128<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-12-99"><a id="__codelineno-12-99" name="__codelineno-12-99" href="#__codelineno-12-99"></a><span class="w">    </span>cv2.line<span class="o">(</span>out_original,<span class="w"> </span><span class="o">(</span>centrox,<span class="w"> </span>centroy-15<span class="o">)</span>,<span class="w"> </span><span class="o">(</span>centrox,<span class="w"> </span>centroy+15<span class="o">)</span>,<span class="w"> </span><span class="o">(</span><span class="m">128</span>,128,128<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-12-100"><a id="__codelineno-12-100" name="__codelineno-12-100" href="#__codelineno-12-100"></a>
+</span><span id="__span-12-101"><a id="__codelineno-12-101" name="__codelineno-12-101" href="#__codelineno-12-101"></a><span class="w">    </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span>f<span class="s2">&quot;Plat:{int(area_max_plat)} Pel:{int(area_max_pelota)}&quot;</span>,<span class="w"> </span><span class="o">(</span><span class="m">10</span>,height-40<span class="o">)</span>,
+</span><span id="__span-12-102"><a id="__codelineno-12-102" name="__codelineno-12-102" href="#__codelineno-12-102"></a><span class="w">                </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.5,<span class="w"> </span><span class="o">(</span><span class="m">200</span>,200,200<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-12-103"><a id="__codelineno-12-103" name="__codelineno-12-103" href="#__codelineno-12-103"></a><span class="w">    </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span>f<span class="s2">&quot;Threshold:{THRESHOLD_PLATAFORMA} (1/2)&quot;</span>,<span class="w"> </span><span class="o">(</span><span class="m">10</span>,height-15<span class="o">)</span>,
+</span><span id="__span-12-104"><a id="__codelineno-12-104" name="__codelineno-12-104" href="#__codelineno-12-104"></a><span class="w">                </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.5,<span class="w"> </span><span class="o">(</span><span class="m">200</span>,200,200<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-12-105"><a id="__codelineno-12-105" name="__codelineno-12-105" href="#__codelineno-12-105"></a>
+</span><span id="__span-12-106"><a id="__codelineno-12-106" name="__codelineno-12-106" href="#__codelineno-12-106"></a><span class="w">    </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span>f<span class="s2">&quot;PID: Kp={Kp:.2f} Ki={Ki:.3f} Kd={Kd:.2f}&quot;</span>,<span class="w"> </span><span class="o">(</span><span class="m">10</span>,120<span class="o">)</span>,
+</span><span id="__span-12-107"><a id="__codelineno-12-107" name="__codelineno-12-107" href="#__codelineno-12-107"></a><span class="w">                </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.5,<span class="w"> </span><span class="o">(</span><span class="m">255</span>,200,0<span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-12-108"><a id="__codelineno-12-108" name="__codelineno-12-108" href="#__codelineno-12-108"></a>
+</span><span id="__span-12-109"><a id="__codelineno-12-109" name="__codelineno-12-109" href="#__codelineno-12-109"></a><span class="w">    </span><span class="nv">frame_count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-12-110"><a id="__codelineno-12-110" name="__codelineno-12-110" href="#__codelineno-12-110"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span>time.time<span class="o">()</span><span class="w"> </span>-<span class="w"> </span>fps_time<span class="w"> </span>&gt;<span class="w"> </span><span class="m">1</span>.0:
+</span><span id="__span-12-111"><a id="__codelineno-12-111" name="__codelineno-12-111" href="#__codelineno-12-111"></a><span class="w">        </span><span class="nv">fps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>frame_count
+</span><span id="__span-12-112"><a id="__codelineno-12-112" name="__codelineno-12-112" href="#__codelineno-12-112"></a><span class="w">        </span><span class="nv">frame_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-113"><a id="__codelineno-12-113" name="__codelineno-12-113" href="#__codelineno-12-113"></a><span class="w">        </span><span class="nv">fps_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>time.time<span class="o">()</span>
+</span><span id="__span-12-114"><a id="__codelineno-12-114" name="__codelineno-12-114" href="#__codelineno-12-114"></a>
+</span><span id="__span-12-115"><a id="__codelineno-12-115" name="__codelineno-12-115" href="#__codelineno-12-115"></a><span class="w">    </span>cv2.putText<span class="o">(</span>out_original,<span class="w"> </span>f<span class="s2">&quot;FPS: {fps}&quot;</span>,<span class="w"> </span><span class="o">(</span>width-100,<span class="w"> </span><span class="m">30</span><span class="o">)</span>,
+</span><span id="__span-12-116"><a id="__codelineno-12-116" name="__codelineno-12-116" href="#__codelineno-12-116"></a><span class="w">                </span>cv2.FONT_HERSHEY_SIMPLEX,<span class="w"> </span><span class="m">0</span>.6,<span class="w"> </span><span class="o">(</span><span class="m">0</span>,255,0<span class="o">)</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-12-117"><a id="__codelineno-12-117" name="__codelineno-12-117" href="#__codelineno-12-117"></a>
+</span><span id="__span-12-118"><a id="__codelineno-12-118" name="__codelineno-12-118" href="#__codelineno-12-118"></a><span class="w">    </span>cv2.imshow<span class="o">(</span><span class="s2">&quot;Sistema de Balance - Original&quot;</span>,<span class="w"> </span>out_original<span class="o">)</span>
+</span><span id="__span-12-119"><a id="__codelineno-12-119" name="__codelineno-12-119" href="#__codelineno-12-119"></a><span class="w">    </span>cv2.imshow<span class="o">(</span><span class="s2">&quot;Deteccion: Plataforma(Azul) + Pelota(Amarillo)&quot;</span>,<span class="w"> </span>out_deteccion<span class="o">)</span>
+</span><span id="__span-12-120"><a id="__codelineno-12-120" name="__codelineno-12-120" href="#__codelineno-12-120"></a>
+</span><span id="__span-12-121"><a id="__codelineno-12-121" name="__codelineno-12-121" href="#__codelineno-12-121"></a><span class="w">    </span><span class="nv">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cv2.waitKey<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>0xFF
+</span><span id="__span-12-122"><a id="__codelineno-12-122" name="__codelineno-12-122" href="#__codelineno-12-122"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>ord<span class="o">(</span><span class="s1">&#39;q&#39;</span><span class="o">)</span>:
+</span><span id="__span-12-123"><a id="__codelineno-12-123" name="__codelineno-12-123" href="#__codelineno-12-123"></a><span class="w">        </span><span class="k">break</span>
+</span><span id="__span-12-124"><a id="__codelineno-12-124" name="__codelineno-12-124" href="#__codelineno-12-124"></a><span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="nv">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>ord<span class="o">(</span><span class="s1">&#39;c&#39;</span><span class="o">)</span>:
+</span><span id="__span-12-125"><a id="__codelineno-12-125" name="__codelineno-12-125" href="#__codelineno-12-125"></a><span class="w">        </span><span class="nv">integral_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-126"><a id="__codelineno-12-126" name="__codelineno-12-126" href="#__codelineno-12-126"></a><span class="w">        </span><span class="nv">integral_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-12-127"><a id="__codelineno-12-127" name="__codelineno-12-127" href="#__codelineno-12-127"></a><span class="w">        </span>print<span class="o">(</span><span class="s2">&quot;Integrales reseteadas&quot;</span><span class="o">)</span>
+</span><span id="__span-12-128"><a id="__codelineno-12-128" name="__codelineno-12-128" href="#__codelineno-12-128"></a><span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="nv">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>ord<span class="o">(</span><span class="s1">&#39;1&#39;</span><span class="o">)</span>:
+</span><span id="__span-12-129"><a id="__codelineno-12-129" name="__codelineno-12-129" href="#__codelineno-12-129"></a><span class="w">        </span><span class="nv">THRESHOLD_PLATAFORMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>max<span class="o">(</span><span class="m">10</span>,<span class="w"> </span>THRESHOLD_PLATAFORMA<span class="w"> </span>-<span class="w"> </span><span class="m">5</span><span class="o">)</span>
+</span><span id="__span-12-130"><a id="__codelineno-12-130" name="__codelineno-12-130" href="#__codelineno-12-130"></a><span class="w">        </span>print<span class="o">(</span>f<span class="s2">&quot;Threshold: {THRESHOLD_PLATAFORMA}&quot;</span><span class="o">)</span>
+</span><span id="__span-12-131"><a id="__codelineno-12-131" name="__codelineno-12-131" href="#__codelineno-12-131"></a><span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="nv">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>ord<span class="o">(</span><span class="s1">&#39;2&#39;</span><span class="o">)</span>:
+</span><span id="__span-12-132"><a id="__codelineno-12-132" name="__codelineno-12-132" href="#__codelineno-12-132"></a><span class="w">        </span><span class="nv">THRESHOLD_PLATAFORMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>min<span class="o">(</span><span class="m">250</span>,<span class="w"> </span>THRESHOLD_PLATAFORMA<span class="w"> </span>+<span class="w"> </span><span class="m">5</span><span class="o">)</span>
+</span><span id="__span-12-133"><a id="__codelineno-12-133" name="__codelineno-12-133" href="#__codelineno-12-133"></a><span class="w">        </span>print<span class="o">(</span>f<span class="s2">&quot;Threshold: {THRESHOLD_PLATAFORMA}&quot;</span><span class="o">)</span>
+</span><span id="__span-12-134"><a id="__codelineno-12-134" name="__codelineno-12-134" href="#__codelineno-12-134"></a>
+</span><span id="__span-12-135"><a id="__codelineno-12-135" name="__codelineno-12-135" href="#__codelineno-12-135"></a>print<span class="o">(</span><span class="s2">&quot;\nCerrando sistema...&quot;</span><span class="o">)</span>
+</span><span id="__span-12-136"><a id="__codelineno-12-136" name="__codelineno-12-136" href="#__codelineno-12-136"></a>cap.release<span class="o">()</span>
+</span><span id="__span-12-137"><a id="__codelineno-12-137" name="__codelineno-12-137" href="#__codelineno-12-137"></a><span class="k">if</span><span class="w"> </span>esp32:
+</span><span id="__span-12-138"><a id="__codelineno-12-138" name="__codelineno-12-138" href="#__codelineno-12-138"></a><span class="w">    </span>esp32.write<span class="o">(</span>f<span class="s2">&quot;{center_angle},{center_angle}\n&quot;</span>.encode<span class="o">())</span>
+</span><span id="__span-12-139"><a id="__codelineno-12-139" name="__codelineno-12-139" href="#__codelineno-12-139"></a><span class="w">    </span>time.sleep<span class="o">(</span><span class="m">0</span>.1<span class="o">)</span>
+</span><span id="__span-12-140"><a id="__codelineno-12-140" name="__codelineno-12-140" href="#__codelineno-12-140"></a><span class="w">    </span>esp32.close<span class="o">()</span>
+</span><span id="__span-12-141"><a id="__codelineno-12-141" name="__codelineno-12-141" href="#__codelineno-12-141"></a><span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;Conexión serial cerrada&quot;</span><span class="o">)</span>
+</span><span id="__span-12-142"><a id="__codelineno-12-142" name="__codelineno-12-142" href="#__codelineno-12-142"></a>cv2.destroyAllWindows<span class="o">()</span>
+</span><span id="__span-12-143"><a id="__codelineno-12-143" name="__codelineno-12-143" href="#__codelineno-12-143"></a>print<span class="o">(</span><span class="s2">&quot;Sistema finalizado&quot;</span><span class="o">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="codigo-esp32-arduino">Código ESP32 / Arduino</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cpp
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">#include &lt;ESP32Servo.h&gt;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>CONFIGURACIÓN<span class="w"> </span>DE<span class="w"> </span><span class="nv">PINES</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>const<span class="w"> </span>int<span class="w"> </span><span class="nv">PIN_SERVO_X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">18</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Servo<span class="w"> </span>que<span class="w"> </span>controla<span class="w"> </span>eje<span class="w"> </span>X<span class="w"> </span><span class="o">(</span>horizontal<span class="o">)</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>const<span class="w"> </span>int<span class="w"> </span><span class="nv">PIN_SERVO_Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">19</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Servo<span class="w"> </span>que<span class="w"> </span>controla<span class="w"> </span>eje<span class="w"> </span>Y<span class="w"> </span><span class="o">(</span>vertical<span class="o">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>CONFIGURACIÓN<span class="w"> </span>DE<span class="w"> </span><span class="nv">SERVOS</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>Servo<span class="w"> </span>servoX<span class="p">;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>Servo<span class="w"> </span>servoY<span class="p">;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>//<span class="w"> </span>Parámetros<span class="w"> </span>PWM<span class="w"> </span>para<span class="w"> </span>servos<span class="w"> </span><span class="o">(</span>ajustar<span class="w"> </span>según<span class="w"> </span>tu<span class="w"> </span>modelo<span class="o">)</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>const<span class="w"> </span>int<span class="w"> </span><span class="nv">PWM_MIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">500</span><span class="p">;</span><span class="w">   </span>//<span class="w"> </span>Ancho<span class="w"> </span>de<span class="w"> </span>pulso<span class="w"> </span>mínimo<span class="w"> </span>en<span class="w"> </span>microsegundos
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>const<span class="w"> </span>int<span class="w"> </span><span class="nv">PWM_MAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2400</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Ancho<span class="w"> </span>de<span class="w"> </span>pulso<span class="w"> </span>máximo<span class="w"> </span>en<span class="w"> </span>microsegundos
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>POSICIÓN<span class="w"> </span><span class="nv">INICIAL</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>const<span class="w"> </span>int<span class="w"> </span><span class="nv">CENTRO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">35</span><span class="p">;</span><span class="w">     </span>//<span class="w"> </span>Posición<span class="w"> </span>central<span class="w"> </span><span class="o">(</span><span class="m">0</span>-180<span class="w"> </span>grados<span class="o">)</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>VARIABLES<span class="w"> </span>DE<span class="w"> </span><span class="nv">COMUNICACIÓN</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>String<span class="w"> </span><span class="nv">inputString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w">         </span>//<span class="w"> </span>Buffer<span class="w"> </span>para<span class="w"> </span>datos<span class="w"> </span>recibidos
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>bool<span class="w"> </span><span class="nv">stringComplete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span><span class="w">     </span>//<span class="w"> </span>Bandera<span class="w"> </span>de<span class="w"> </span>comando<span class="w"> </span>completo
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>VARIABLES<span class="w"> </span>DE<span class="w"> </span><span class="nv">CONTROL</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>int<span class="w"> </span><span class="nv">posicionX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>CENTRO<span class="p">;</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>int<span class="w"> </span><span class="nv">posicionY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>CENTRO<span class="p">;</span>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>unsigned<span class="w"> </span>long<span class="w"> </span><span class="nv">ultimoComando</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>const<span class="w"> </span>unsigned<span class="w"> </span>long<span class="w"> </span><span class="nv">TIMEOUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2000</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Timeout<span class="w"> </span>en<span class="w"> </span>ms<span class="w"> </span><span class="o">(</span>volver<span class="w"> </span>al<span class="w"> </span>centro<span class="w"> </span>si<span class="w"> </span>no<span class="w"> </span>hay<span class="w"> </span>datos<span class="o">)</span>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>CONFIGURACIÓN<span class="w"> </span><span class="nv">INICIAL</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>void<span class="w"> </span>setup<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">  </span>//<span class="w"> </span>Iniciar<span class="w"> </span>comunicación<span class="w"> </span>serial
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="w">  </span>Serial.begin<span class="o">(</span><span class="m">115200</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>
+</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="w">  </span>//<span class="w"> </span>Reservar<span class="w"> </span>memoria<span class="w"> </span>para<span class="w"> </span>el<span class="w"> </span>buffer
+</span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="w">  </span>inputString.reserve<span class="o">(</span><span class="m">20</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>
+</span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="w">  </span>//<span class="w"> </span>Configurar<span class="w"> </span>servos<span class="w"> </span>con<span class="w"> </span>parámetros<span class="w"> </span>PWM<span class="w"> </span>personalizados
+</span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="w">  </span>servoX.attach<span class="o">(</span>PIN_SERVO_X,<span class="w"> </span>PWM_MIN,<span class="w"> </span>PWM_MAX<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-39"><a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="w">  </span>servoY.attach<span class="o">(</span>PIN_SERVO_Y,<span class="w"> </span>PWM_MIN,<span class="w"> </span>PWM_MAX<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-40"><a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>
+</span><span id="__span-13-41"><a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="w">  </span>//<span class="w"> </span>Mover<span class="w"> </span>a<span class="w"> </span>posición<span class="w"> </span>inicial<span class="w"> </span>centrada
+</span><span id="__span-13-42"><a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="w">  </span>servoX.write<span class="o">(</span>CENTRO<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-43"><a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a><span class="w">  </span>servoY.write<span class="o">(</span>CENTRO<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-44"><a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>
+</span><span id="__span-13-45"><a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="w">  </span>//<span class="w"> </span>Esperar<span class="w"> </span>estabilización
+</span><span id="__span-13-46"><a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a><span class="w">  </span>delay<span class="o">(</span><span class="m">500</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-47"><a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>
+</span><span id="__span-13-48"><a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a><span class="w">  </span>//<span class="w"> </span>Mensaje<span class="w"> </span>de<span class="w"> </span>inicio
+</span><span id="__span-13-49"><a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot;========================================&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-50"><a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot;ESP32 - Sistema de Balance de Pelota&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-51"><a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot;========================================&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-52"><a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot;Configuracion:&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-53"><a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a><span class="w">  </span>Serial.print<span class="o">(</span><span class="s2">&quot;  - Servo X en pin GPIO &quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-54"><a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a><span class="w">  </span>Serial.println<span class="o">(</span>PIN_SERVO_X<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-55"><a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a><span class="w">  </span>Serial.print<span class="o">(</span><span class="s2">&quot;  - Servo Y en pin GPIO &quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-56"><a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a><span class="w">  </span>Serial.println<span class="o">(</span>PIN_SERVO_Y<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-57"><a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a><span class="w">  </span>Serial.print<span class="o">(</span><span class="s2">&quot;  - Centro: &quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-58"><a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a><span class="w">  </span>Serial.print<span class="o">(</span>CENTRO<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-59"><a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot; grados&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-60"><a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a><span class="w">  </span>Serial.print<span class="o">(</span><span class="s2">&quot;  - PWM: &quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-61"><a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a><span class="w">  </span>Serial.print<span class="o">(</span>PWM_MIN<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-62"><a id="__codelineno-13-62" name="__codelineno-13-62" href="#__codelineno-13-62"></a><span class="w">  </span>Serial.print<span class="o">(</span><span class="s2">&quot;-&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-63"><a id="__codelineno-13-63" name="__codelineno-13-63" href="#__codelineno-13-63"></a><span class="w">  </span>Serial.print<span class="o">(</span>PWM_MAX<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-64"><a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot; us&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-65"><a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot;========================================&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-66"><a id="__codelineno-13-66" name="__codelineno-13-66" href="#__codelineno-13-66"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot;Sistema listo. Esperando datos...&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-67"><a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot;Formato: X,Y (ejemplo: 90,85)&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-68"><a id="__codelineno-13-68" name="__codelineno-13-68" href="#__codelineno-13-68"></a><span class="w">  </span>Serial.println<span class="o">(</span><span class="s2">&quot;========================================&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-69"><a id="__codelineno-13-69" name="__codelineno-13-69" href="#__codelineno-13-69"></a>
+</span><span id="__span-13-70"><a id="__codelineno-13-70" name="__codelineno-13-70" href="#__codelineno-13-70"></a><span class="w">  </span><span class="nv">ultimoComando</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>millis<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-13-71"><a id="__codelineno-13-71" name="__codelineno-13-71" href="#__codelineno-13-71"></a><span class="o">}</span>
+</span><span id="__span-13-72"><a id="__codelineno-13-72" name="__codelineno-13-72" href="#__codelineno-13-72"></a>
+</span><span id="__span-13-73"><a id="__codelineno-13-73" name="__codelineno-13-73" href="#__codelineno-13-73"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>BUCLE<span class="w"> </span><span class="nv">PRINCIPAL</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-74"><a id="__codelineno-13-74" name="__codelineno-13-74" href="#__codelineno-13-74"></a>void<span class="w"> </span>loop<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-75"><a id="__codelineno-13-75" name="__codelineno-13-75" href="#__codelineno-13-75"></a><span class="w">  </span>//<span class="w"> </span>Leer<span class="w"> </span>datos<span class="w"> </span>seriales<span class="w"> </span>disponibles
+</span><span id="__span-13-76"><a id="__codelineno-13-76" name="__codelineno-13-76" href="#__codelineno-13-76"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>Serial.available<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-77"><a id="__codelineno-13-77" name="__codelineno-13-77" href="#__codelineno-13-77"></a><span class="w">    </span>char<span class="w"> </span><span class="nv">inChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>char<span class="o">)</span>Serial.read<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-13-78"><a id="__codelineno-13-78" name="__codelineno-13-78" href="#__codelineno-13-78"></a>
+</span><span id="__span-13-79"><a id="__codelineno-13-79" name="__codelineno-13-79" href="#__codelineno-13-79"></a><span class="w">    </span>//<span class="w"> </span>Si<span class="w"> </span>es<span class="w"> </span>salto<span class="w"> </span>de<span class="w"> </span>línea,<span class="w"> </span>el<span class="w"> </span>comando<span class="w"> </span>está<span class="w"> </span>completo
+</span><span id="__span-13-80"><a id="__codelineno-13-80" name="__codelineno-13-80" href="#__codelineno-13-80"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="nv">inChar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nv">inChar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;\r&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-81"><a id="__codelineno-13-81" name="__codelineno-13-81" href="#__codelineno-13-81"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>inputString.length<span class="o">()</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-82"><a id="__codelineno-13-82" name="__codelineno-13-82" href="#__codelineno-13-82"></a><span class="w">        </span><span class="nv">stringComplete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="p">;</span>
+</span><span id="__span-13-83"><a id="__codelineno-13-83" name="__codelineno-13-83" href="#__codelineno-13-83"></a><span class="w">      </span><span class="o">}</span>
+</span><span id="__span-13-84"><a id="__codelineno-13-84" name="__codelineno-13-84" href="#__codelineno-13-84"></a><span class="w">    </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-85"><a id="__codelineno-13-85" name="__codelineno-13-85" href="#__codelineno-13-85"></a><span class="w">      </span>//<span class="w"> </span>Agregar<span class="w"> </span>caracter<span class="w"> </span>al<span class="w"> </span>buffer
+</span><span id="__span-13-86"><a id="__codelineno-13-86" name="__codelineno-13-86" href="#__codelineno-13-86"></a><span class="w">      </span><span class="nv">inputString</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>inChar<span class="p">;</span>
+</span><span id="__span-13-87"><a id="__codelineno-13-87" name="__codelineno-13-87" href="#__codelineno-13-87"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-13-88"><a id="__codelineno-13-88" name="__codelineno-13-88" href="#__codelineno-13-88"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-13-89"><a id="__codelineno-13-89" name="__codelineno-13-89" href="#__codelineno-13-89"></a>
+</span><span id="__span-13-90"><a id="__codelineno-13-90" name="__codelineno-13-90" href="#__codelineno-13-90"></a><span class="w">  </span>//<span class="w"> </span>Procesar<span class="w"> </span>comando<span class="w"> </span>si<span class="w"> </span>está<span class="w"> </span>completo
+</span><span id="__span-13-91"><a id="__codelineno-13-91" name="__codelineno-13-91" href="#__codelineno-13-91"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>stringComplete<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-92"><a id="__codelineno-13-92" name="__codelineno-13-92" href="#__codelineno-13-92"></a><span class="w">    </span>procesarComando<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-13-93"><a id="__codelineno-13-93" name="__codelineno-13-93" href="#__codelineno-13-93"></a><span class="w">    </span><span class="nv">inputString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span id="__span-13-94"><a id="__codelineno-13-94" name="__codelineno-13-94" href="#__codelineno-13-94"></a><span class="w">    </span><span class="nv">stringComplete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span>
+</span><span id="__span-13-95"><a id="__codelineno-13-95" name="__codelineno-13-95" href="#__codelineno-13-95"></a><span class="w">    </span><span class="nv">ultimoComando</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>millis<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-13-96"><a id="__codelineno-13-96" name="__codelineno-13-96" href="#__codelineno-13-96"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-13-97"><a id="__codelineno-13-97" name="__codelineno-13-97" href="#__codelineno-13-97"></a>
+</span><span id="__span-13-98"><a id="__codelineno-13-98" name="__codelineno-13-98" href="#__codelineno-13-98"></a><span class="w">  </span>//<span class="w"> </span>Timeout:<span class="w"> </span>volver<span class="w"> </span>al<span class="w"> </span>centro<span class="w"> </span>si<span class="w"> </span>no<span class="w"> </span>hay<span class="w"> </span>comandos<span class="w"> </span>recientes
+</span><span id="__span-13-99"><a id="__codelineno-13-99" name="__codelineno-13-99" href="#__codelineno-13-99"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>millis<span class="o">()</span><span class="w"> </span>-<span class="w"> </span>ultimoComando<span class="w"> </span>&gt;<span class="w"> </span>TIMEOUT<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-100"><a id="__codelineno-13-100" name="__codelineno-13-100" href="#__codelineno-13-100"></a><span class="w">    </span>volverAlCentro<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-13-101"><a id="__codelineno-13-101" name="__codelineno-13-101" href="#__codelineno-13-101"></a><span class="w">    </span><span class="nv">ultimoComando</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>millis<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-13-102"><a id="__codelineno-13-102" name="__codelineno-13-102" href="#__codelineno-13-102"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-13-103"><a id="__codelineno-13-103" name="__codelineno-13-103" href="#__codelineno-13-103"></a><span class="o">}</span>
+</span><span id="__span-13-104"><a id="__codelineno-13-104" name="__codelineno-13-104" href="#__codelineno-13-104"></a>
+</span><span id="__span-13-105"><a id="__codelineno-13-105" name="__codelineno-13-105" href="#__codelineno-13-105"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>FUNCIÓN:<span class="w"> </span>PROCESAR<span class="w"> </span><span class="nv">COMANDO</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-106"><a id="__codelineno-13-106" name="__codelineno-13-106" href="#__codelineno-13-106"></a>void<span class="w"> </span>procesarComando<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-107"><a id="__codelineno-13-107" name="__codelineno-13-107" href="#__codelineno-13-107"></a><span class="w">  </span>//<span class="w"> </span>Buscar<span class="w"> </span>la<span class="w"> </span>coma<span class="w"> </span>separadora
+</span><span id="__span-13-108"><a id="__codelineno-13-108" name="__codelineno-13-108" href="#__codelineno-13-108"></a><span class="w">  </span>int<span class="w"> </span><span class="nv">comaIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>inputString.indexOf<span class="o">(</span><span class="s1">&#39;,&#39;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-109"><a id="__codelineno-13-109" name="__codelineno-13-109" href="#__codelineno-13-109"></a>
+</span><span id="__span-13-110"><a id="__codelineno-13-110" name="__codelineno-13-110" href="#__codelineno-13-110"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>comaIndex<span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-111"><a id="__codelineno-13-111" name="__codelineno-13-111" href="#__codelineno-13-111"></a><span class="w">    </span>//<span class="w"> </span>Extraer<span class="w"> </span>valores<span class="w"> </span>X<span class="w"> </span>e<span class="w"> </span>Y
+</span><span id="__span-13-112"><a id="__codelineno-13-112" name="__codelineno-13-112" href="#__codelineno-13-112"></a><span class="w">    </span>String<span class="w"> </span><span class="nv">valorXStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>inputString.substring<span class="o">(</span><span class="m">0</span>,<span class="w"> </span>comaIndex<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-113"><a id="__codelineno-13-113" name="__codelineno-13-113" href="#__codelineno-13-113"></a><span class="w">    </span>String<span class="w"> </span><span class="nv">valorYStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>inputString.substring<span class="o">(</span>comaIndex<span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-114"><a id="__codelineno-13-114" name="__codelineno-13-114" href="#__codelineno-13-114"></a>
+</span><span id="__span-13-115"><a id="__codelineno-13-115" name="__codelineno-13-115" href="#__codelineno-13-115"></a><span class="w">    </span>//<span class="w"> </span>Convertir<span class="w"> </span>a<span class="w"> </span>enteros
+</span><span id="__span-13-116"><a id="__codelineno-13-116" name="__codelineno-13-116" href="#__codelineno-13-116"></a><span class="w">    </span>int<span class="w"> </span><span class="nv">xRecibido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>valorXStr.toInt<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-13-117"><a id="__codelineno-13-117" name="__codelineno-13-117" href="#__codelineno-13-117"></a><span class="w">    </span>int<span class="w"> </span><span class="nv">yRecibido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>valorYStr.toInt<span class="o">()</span><span class="p">;</span>
+</span><span id="__span-13-118"><a id="__codelineno-13-118" name="__codelineno-13-118" href="#__codelineno-13-118"></a>
+</span><span id="__span-13-119"><a id="__codelineno-13-119" name="__codelineno-13-119" href="#__codelineno-13-119"></a><span class="w">    </span>//<span class="w"> </span>Validar<span class="w"> </span>y<span class="w"> </span>limitar<span class="w"> </span>al<span class="w"> </span>rango<span class="w"> </span><span class="m">0</span>-180
+</span><span id="__span-13-120"><a id="__codelineno-13-120" name="__codelineno-13-120" href="#__codelineno-13-120"></a><span class="w">    </span><span class="nv">xRecibido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>constrain<span class="o">(</span>xRecibido,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">180</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-121"><a id="__codelineno-13-121" name="__codelineno-13-121" href="#__codelineno-13-121"></a><span class="w">    </span><span class="nv">yRecibido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>constrain<span class="o">(</span>yRecibido,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">180</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-122"><a id="__codelineno-13-122" name="__codelineno-13-122" href="#__codelineno-13-122"></a>
+</span><span id="__span-13-123"><a id="__codelineno-13-123" name="__codelineno-13-123" href="#__codelineno-13-123"></a><span class="w">    </span>//<span class="w"> </span>Actualizar<span class="w"> </span>posiciones
+</span><span id="__span-13-124"><a id="__codelineno-13-124" name="__codelineno-13-124" href="#__codelineno-13-124"></a><span class="w">    </span><span class="nv">posicionX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>xRecibido<span class="p">;</span>
+</span><span id="__span-13-125"><a id="__codelineno-13-125" name="__codelineno-13-125" href="#__codelineno-13-125"></a><span class="w">    </span><span class="nv">posicionY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>yRecibido<span class="p">;</span>
+</span><span id="__span-13-126"><a id="__codelineno-13-126" name="__codelineno-13-126" href="#__codelineno-13-126"></a>
+</span><span id="__span-13-127"><a id="__codelineno-13-127" name="__codelineno-13-127" href="#__codelineno-13-127"></a><span class="w">    </span>//<span class="w"> </span>Mover<span class="w"> </span>servos
+</span><span id="__span-13-128"><a id="__codelineno-13-128" name="__codelineno-13-128" href="#__codelineno-13-128"></a><span class="w">    </span>servoX.write<span class="o">(</span>posicionX<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-129"><a id="__codelineno-13-129" name="__codelineno-13-129" href="#__codelineno-13-129"></a><span class="w">    </span>servoY.write<span class="o">(</span>posicionY<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-130"><a id="__codelineno-13-130" name="__codelineno-13-130" href="#__codelineno-13-130"></a>
+</span><span id="__span-13-131"><a id="__codelineno-13-131" name="__codelineno-13-131" href="#__codelineno-13-131"></a><span class="w">    </span>//<span class="w"> </span>Enviar<span class="w"> </span>confirmación<span class="w"> </span>a<span class="w"> </span>Python
+</span><span id="__span-13-132"><a id="__codelineno-13-132" name="__codelineno-13-132" href="#__codelineno-13-132"></a><span class="w">    </span>Serial.print<span class="o">(</span><span class="s2">&quot;Recibido: &quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-133"><a id="__codelineno-13-133" name="__codelineno-13-133" href="#__codelineno-13-133"></a><span class="w">    </span>Serial.print<span class="o">(</span>posicionX<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-134"><a id="__codelineno-13-134" name="__codelineno-13-134" href="#__codelineno-13-134"></a><span class="w">    </span>Serial.print<span class="o">(</span><span class="s2">&quot;,&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-135"><a id="__codelineno-13-135" name="__codelineno-13-135" href="#__codelineno-13-135"></a><span class="w">    </span>Serial.println<span class="o">(</span>posicionY<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-136"><a id="__codelineno-13-136" name="__codelineno-13-136" href="#__codelineno-13-136"></a>
+</span><span id="__span-13-137"><a id="__codelineno-13-137" name="__codelineno-13-137" href="#__codelineno-13-137"></a><span class="w">  </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-138"><a id="__codelineno-13-138" name="__codelineno-13-138" href="#__codelineno-13-138"></a><span class="w">    </span>//<span class="w"> </span>Comando<span class="w"> </span>inválido<span class="w"> </span><span class="o">(</span>sin<span class="w"> </span>coma<span class="o">)</span>
+</span><span id="__span-13-139"><a id="__codelineno-13-139" name="__codelineno-13-139" href="#__codelineno-13-139"></a><span class="w">    </span>Serial.print<span class="o">(</span><span class="s2">&quot;Error: Formato invalido &#39;&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-140"><a id="__codelineno-13-140" name="__codelineno-13-140" href="#__codelineno-13-140"></a><span class="w">    </span>Serial.print<span class="o">(</span>inputString<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-141"><a id="__codelineno-13-141" name="__codelineno-13-141" href="#__codelineno-13-141"></a><span class="w">    </span>Serial.println<span class="o">(</span><span class="s2">&quot;&#39;. Use: X,Y&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-142"><a id="__codelineno-13-142" name="__codelineno-13-142" href="#__codelineno-13-142"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-13-143"><a id="__codelineno-13-143" name="__codelineno-13-143" href="#__codelineno-13-143"></a><span class="o">}</span>
+</span><span id="__span-13-144"><a id="__codelineno-13-144" name="__codelineno-13-144" href="#__codelineno-13-144"></a>
+</span><span id="__span-13-145"><a id="__codelineno-13-145" name="__codelineno-13-145" href="#__codelineno-13-145"></a>//<span class="w"> </span><span class="o">===============</span><span class="w"> </span>FUNCIÓN:<span class="w"> </span>VOLVER<span class="w"> </span>AL<span class="w"> </span><span class="nv">CENTRO</span><span class="w"> </span><span class="o">===============</span>
+</span><span id="__span-13-146"><a id="__codelineno-13-146" name="__codelineno-13-146" href="#__codelineno-13-146"></a>void<span class="w"> </span>volverAlCentro<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-147"><a id="__codelineno-13-147" name="__codelineno-13-147" href="#__codelineno-13-147"></a><span class="w">  </span>static<span class="w"> </span>bool<span class="w"> </span><span class="nv">mensajeMostrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span>
+</span><span id="__span-13-148"><a id="__codelineno-13-148" name="__codelineno-13-148" href="#__codelineno-13-148"></a>
+</span><span id="__span-13-149"><a id="__codelineno-13-149" name="__codelineno-13-149" href="#__codelineno-13-149"></a><span class="w">  </span>//<span class="w"> </span>Movimiento<span class="w"> </span>suave<span class="w"> </span>hacia<span class="w"> </span>el<span class="w"> </span>centro
+</span><span id="__span-13-150"><a id="__codelineno-13-150" name="__codelineno-13-150" href="#__codelineno-13-150"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>posicionX<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>CENTRO<span class="w"> </span><span class="o">||</span><span class="w"> </span>posicionY<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>CENTRO<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-151"><a id="__codelineno-13-151" name="__codelineno-13-151" href="#__codelineno-13-151"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>!mensajeMostrado<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-152"><a id="__codelineno-13-152" name="__codelineno-13-152" href="#__codelineno-13-152"></a><span class="w">      </span>Serial.println<span class="o">(</span><span class="s2">&quot;Timeout: Volviendo al centro...&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-153"><a id="__codelineno-13-153" name="__codelineno-13-153" href="#__codelineno-13-153"></a><span class="w">      </span><span class="nv">mensajeMostrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="p">;</span>
+</span><span id="__span-13-154"><a id="__codelineno-13-154" name="__codelineno-13-154" href="#__codelineno-13-154"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-13-155"><a id="__codelineno-13-155" name="__codelineno-13-155" href="#__codelineno-13-155"></a>
+</span><span id="__span-13-156"><a id="__codelineno-13-156" name="__codelineno-13-156" href="#__codelineno-13-156"></a><span class="w">    </span>//<span class="w"> </span>Acercar<span class="w"> </span>gradualmente<span class="w"> </span>al<span class="w"> </span>centro
+</span><span id="__span-13-157"><a id="__codelineno-13-157" name="__codelineno-13-157" href="#__codelineno-13-157"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>posicionX<span class="w"> </span>&lt;<span class="w"> </span>CENTRO<span class="o">)</span><span class="w"> </span>posicionX++<span class="p">;</span>
+</span><span id="__span-13-158"><a id="__codelineno-13-158" name="__codelineno-13-158" href="#__codelineno-13-158"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>posicionX<span class="w"> </span>&gt;<span class="w"> </span>CENTRO<span class="o">)</span><span class="w"> </span>posicionX--<span class="p">;</span>
+</span><span id="__span-13-159"><a id="__codelineno-13-159" name="__codelineno-13-159" href="#__codelineno-13-159"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>posicionY<span class="w"> </span>&lt;<span class="w"> </span>CENTRO<span class="o">)</span><span class="w"> </span>posicionY++<span class="p">;</span>
+</span><span id="__span-13-160"><a id="__codelineno-13-160" name="__codelineno-13-160" href="#__codelineno-13-160"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>posicionY<span class="w"> </span>&gt;<span class="w"> </span>CENTRO<span class="o">)</span><span class="w"> </span>posicionY--<span class="p">;</span>
+</span><span id="__span-13-161"><a id="__codelineno-13-161" name="__codelineno-13-161" href="#__codelineno-13-161"></a>
+</span><span id="__span-13-162"><a id="__codelineno-13-162" name="__codelineno-13-162" href="#__codelineno-13-162"></a><span class="w">    </span>//<span class="w"> </span>Mover<span class="w"> </span>servos
+</span><span id="__span-13-163"><a id="__codelineno-13-163" name="__codelineno-13-163" href="#__codelineno-13-163"></a><span class="w">    </span>servoX.write<span class="o">(</span>posicionX<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-164"><a id="__codelineno-13-164" name="__codelineno-13-164" href="#__codelineno-13-164"></a><span class="w">    </span>servoY.write<span class="o">(</span>posicionY<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-13-165"><a id="__codelineno-13-165" name="__codelineno-13-165" href="#__codelineno-13-165"></a>
+</span><span id="__span-13-166"><a id="__codelineno-13-166" name="__codelineno-13-166" href="#__codelineno-13-166"></a><span class="w">    </span>delay<span class="o">(</span><span class="m">20</span><span class="o">)</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Movimiento<span class="w"> </span>suave
+</span><span id="__span-13-167"><a id="__codelineno-13-167" name="__codelineno-13-167" href="#__codelineno-13-167"></a><span class="w">  </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-168"><a id="__codelineno-13-168" name="__codelineno-13-168" href="#__codelineno-13-168"></a><span class="w">    </span><span class="nv">mensajeMostrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span>
+</span><span id="__span-13-169"><a id="__codelineno-13-169" name="__codelineno-13-169" href="#__codelineno-13-169"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-13-170"><a id="__codelineno-13-170" name="__codelineno-13-170" href="#__codelineno-13-170"></a><span class="o">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="instalacion-y-uso">Instalación y Uso</h2>
+<ol>
+<li>Cargar el código en el ESP32.</li>
+<li>Ejecutar el script de Python.</li>
+<li>Verificar que la cámara detecte la plataforma.</li>
+<li>Ajustar parámetros PID con los sliders.</li>
+<li>Colocar la pelota sobre la plataforma.</li>
+<li>Observar la estabilización en tiempo real.</li>
+</ol>
+<hr />
+<h2 id="conclusiones">Conclusiones</h2>
+<ul>
+<li>El robot utiliza <em>visión artificial</em> para estimar posición.</li>
+<li>El <em>PID</em> corrige la inclinación con alta precisión.</li>
+<li>La estructura mecánica y servos de alto torque permiten estabilidad.</li>
+<li>Se obtuvo un robot funcional capaz de mantener el equilibrio de una pelota.</li>
+</ul>
+<hr />
+<h2 id="licencia">Licencia</h2>
+<p>Proyecto académico desarrollado para fines educativos.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
