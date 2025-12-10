@@ -117,6 +117,7 @@ esp32.write(mensaje.encode())
 Python (Visión por Computadora)
 
 python
+
 import cv2
 import time
 import numpy as np
@@ -124,6 +125,7 @@ import serial
 import serial.tools.list_ports
 
 # ------------------- Configuración Serial Bluetooth -------------------
+```bash
 esp32_port = 'COM3'
 baud_rate = 115200
  
@@ -160,7 +162,8 @@ except Exception as e:
     esp32 = None
 
 print("=" * 50)
- 
+```
+
 # ------------------- Configuración cámara -------------------
 cap = cv2.VideoCapture(1)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
