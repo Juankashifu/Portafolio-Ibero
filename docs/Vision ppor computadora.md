@@ -111,6 +111,7 @@ esp32.write(mensaje.encode())
 ## Mecánica
 ![Multimedia](https://github.com/user-attachments/assets/925b56c5-983c-4463-8b97-83ee4fd21169)![Multimedia (1)](https://github.com/user-attachments/assets/f7d7f766-1d27-45a5-99fc-aa2649a0c96f)![Foto seleccionada](https://github.com/user-attachments/assets/6f1e95bc-75f0-48e3-ade8-899db7e5f94b)
 
+![Armado](recursos/imgs/Armado.jpg)
 ---
 ## Códigos
 
